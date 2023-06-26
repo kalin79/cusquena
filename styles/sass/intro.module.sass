@@ -1,0 +1,88 @@
+@import 'vars/colors'
+@import 'abstracts/mixins'
+@import 'vars/fonts'
+
+.intro
+    border: 0px solid red
+    width: 100%
+    box-sizing: border-box
+    min-height: 100vh
+    overflow: hidden
+    position: relative
+    .boxError
+        display: none
+        p
+            color: red !important
+    .boxLegal
+        position: absolute
+        bottom: 1rem
+        left: 0
+        width: 100%
+        img
+            width: 380px
+            height: 20px
+            aspect-ratio: 1 / 1
+            object-fit: cover
+    .boxContent
+        position: relative
+        z-index: 100
+        .boxValidacion
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            .boxIconInca
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 1rem
+                img
+                    width: 90px
+                    height: 25px
+                    aspect-ratio: 1 / 1
+                    object-fit: contain
+            .boxButton
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 1.5rem
+            .boxInputs
+                display: flex
+                justify-content: center
+                align-items: center
+                gap: .75rem
+                padding-top: .5rem
+                input[type="text"]
+                    width: 56px
+                    height: 77px
+                    border-radius: 15px
+                    border: 1px solid $dorado
+                    background: transparent
+                    color: $blancoClaro
+                    font-family: $RodfatTwo
+                    font-size: 42px
+                    line-height: 1.5em
+                    text-align: center
+                    &:focus
+                        border: 1px solid $dorado
+                        outline: none
+
+            p
+                font-family: $norpeth
+                font-size: 16px
+                line-height: 1.5em
+                color: $dorado
+                text-align: center
+                margin-top: 1.25rem
+        .boxFechaReserva
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            margin-top: 1.5rem
+            img
+                width: 180px
+                height: 37px
+                aspect-ratio: 1 / 1
+                object-fit: contain
+        
+    
+        

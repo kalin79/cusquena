@@ -1,0 +1,61 @@
+@import 'vars/colors'
+@import 'abstracts/mixins'
+@import 'vars/fonts'
+
+.footerMain
+    border-top: 1px solid $doradoClaro
+    background: $grisOscuro
+    padding: 3rem 0 1rem
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    position: relative
+    .patron
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 263px
+        z-index: 3
+        .bcg
+            background: url('/assets/patron2.png')
+            background-repeat: repeat
+            background-position: center
+            height: 263px
+    .boxLegal
+        width: 100%
+        box-sizing: border-box
+        padding: 2rem 1rem 0
+        img
+            width: 100%
+            height: 20px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+    .boxLogoCusquena
+        img
+            width: 200px
+            height: 120px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+    nav
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        margin-top: 1.75rem
+        position: relative
+        z-index: 10
+        a
+            border-top: 1px solid $doradoClaro
+            width: 100%
+            padding: .5rem 0
+            font-family: $norpeth
+            font-size: 16px
+            line-height: 1.5em
+            color: $doradoClaro
+            text-align: center
+            text-decoration: none
+            &:last-child
+                border-bottom: 1px solid $doradoClaro
+                
