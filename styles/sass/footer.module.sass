@@ -5,12 +5,15 @@
 .footerMain
     border-top: 1px solid $doradoClaro
     background: $grisOscuro
-    padding: 3rem 0 1rem
+    background: $grisOscuro
+    background: linear-gradient(180deg, rgba($grisOscuro,1) 60%, rgba(#3d3c3c,1) 100%)
+    padding: 3rem 0 0rem
     display: flex
     justify-content: center
     align-items: center
     flex-wrap: wrap
     position: relative
+    flex-direction: column
     .patron
         position: absolute
         bottom: 0
@@ -26,10 +29,28 @@
     .boxLegal
         width: 100%
         box-sizing: border-box
-        padding: 2rem 1rem 0
+        padding: 2rem 1rem .5rem
         img
             width: 100%
             height: 20px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+    .boxBackus
+        background: $doradoOscuro
+        padding: .5rem 0
+        width: 100%
+        display: flex
+        justify-content: center
+        img
+            width: 70px
+            height: 34px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+    .boxLogo
+        margin-bottom: 2rem
+        img
+            width: 160px
+            height: 65px
             aspect-ratio: 1 / 1
             object-fit: contain
     .boxLogoCusquena
@@ -47,7 +68,7 @@
         position: relative
         z-index: 10
         a
-            border-top: 1px solid $doradoClaro
+            // border-top: 1px solid $doradoClaro
             width: 100%
             padding: .5rem 0
             font-family: $norpeth
@@ -56,6 +77,6 @@
             color: $doradoClaro
             text-align: center
             text-decoration: none
-            &:last-child
-                border-bottom: 1px solid $doradoClaro
+            // &:last-child
+                // border-bottom: 1px solid $doradoClaro
                 

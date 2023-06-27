@@ -6,6 +6,11 @@ import styles from  '../styles/sass/footer.module.sass'
 export default function Footer() {
      return (
           <footer className={styles.footerMain}>
+               <div className={styles.boxLogo}>
+                    <Link href='/inicio'>
+                         <Image src='/assets/logocuzquena.svg' alt='logo' width={90} height={30} />
+                    </Link>
+               </div>
                <div className={styles.boxLogoCusquena}>
                     <Image src='/assets/logoIntro.svg' alt='logo' width={247} height={375} />
                </div>
@@ -19,6 +24,9 @@ export default function Footer() {
                </div>
                <div className={styles.boxLegal}>
                     <Image  src='/assets/tomar.svg' width={380} height={20} alt='Legal' />
+               </div>
+               <div className={styles.boxBackus}>
+                    <Image  src='/assets/backus.svg' width={70} height={33} alt='Backus' />
                </div>
           </footer>
      )
