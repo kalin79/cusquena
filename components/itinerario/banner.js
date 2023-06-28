@@ -18,6 +18,8 @@ const Banner = ({data}) => {
                 </div>
             </div>
             <div className={styles.iconsRombo}>
+            <div className={`iconRombo claro small ${styles.pos1}`}></div>
+            <div className={`iconRombo claro ${styles.pos2}`}></div>
                 <div className={`boxContenidoRombo ${styles.posRombo}`}>
                     <div className='romboPrincipal'>
                         <div className='boxInfo'>

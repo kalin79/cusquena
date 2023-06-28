@@ -6,6 +6,84 @@ body
      background: url('/assets/bgintro2.png')
      background-repeat: repeat
      background-size: 390px 844px
+.dots
+     display: flex
+     justify-content: center
+     gap: 2rem
+     padding: 3rem
+     .dot
+          width: 10px
+          height: 10px
+          background: white
+.sliderContent
+     position: relative
+     overflow: hidden 
+     display: flex
+     flex: 1
+     height: 400px
+     .sliderInner
+          position: relative
+          height: 100%
+          width: 100%
+          overflow: hidden
+          .slide
+               position: absolute
+               font-size: 90px
+               font-weight: 700
+               color: rgba(255,255,255,0.9)
+               display: flex
+               align-items: center
+               justify-content: center
+               height: 100%
+               width: calc(100% / 3)
+               width: 100%
+.accordion
+     border: 0px solid red
+     display: flex
+     justify-content: center
+     align-items: center
+     flex-wrap: wrap
+     flex-direction: column
+     gap: 1rem
+     .panel
+          overflow: hidden
+          border: 1px solid $dorado
+          border-radius: 5px
+          .panel-header
+               cursor: pointer
+               border-radius: 5px
+               padding: .5rem 1rem
+               position: relative
+               .header-arrow
+                    position: absolute
+                    top: 50%
+                    right: .5rem
+                    transform: translateY(-50%)
+                    img
+                         width: 16px
+                         height: 8px
+                         aspect-ratio: 1 / 1
+                         object-fit: contain
+               h3
+                    font-family: $abel
+                    font-size: 16px
+                    line-height: 1.5em
+                    color: $dorado
+                    text-align: left
+                    text-transform: uppercase
+                    margin: 0
+          .panel-content
+               background: transparent
+               height: 0
+               padding: 0 1rem 0
+               p
+                    font-family: $abel
+                    font-size: 16px
+                    line-height: 1.5em
+                    color: $dorado
+                    text-align: left
+                    margin: 0 0 .75rem 0
+
 .overflowHidden
      overflow: hidden
 .iconRombo
@@ -20,6 +98,12 @@ body
      bottom: auto
      background: transparent
      box-sizing: border-box
+     &.claro
+          border: 1rem solid $doradoClaro
+          &.small
+               border: .55rem solid $doradoClaro
+          &.big
+               border: 1.55rem solid $doradoClaro
      &.small
           width: 30px
           height: 30px

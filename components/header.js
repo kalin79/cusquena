@@ -27,12 +27,12 @@ export default function Header() {
                tl.set(boxNav.current.children[0].children,{opacity: 0,x:'-100%'})
                tl.set(boxNav.current.children[1].children,{opacity: 0,x:'-100%'})
                tl.set(boxNav.current.children[2].children,{opacity: 0,x:'-100%'})
-               tl.to(inner.current,{y: "0%", duration: .5})
-               tl.to(boxLogo.current,{opacity: 1,scale: 1, duration: .5})
-               tl.to(boxNav.current,{opacity: 1, duration: .5})
-               tl.to(boxNav.current.children[0].children,{opacity: 1,x: 0 ,duration: .5})
-               tl.to(boxNav.current.children[1].children,{opacity: 1,x: 0 ,duration: .5})
-               tl.to(boxNav.current.children[2].children,{opacity: 1,x: 0 ,duration: .5})
+               tl.to(inner.current,{y: "0%", duration: .15})
+               tl.to(boxLogo.current,{opacity: 1,scale: 1, duration: .15})
+               tl.to(boxNav.current,{opacity: 1, duration: .15})
+               tl.to(boxNav.current.children[0].children,{opacity: 1,x: 0 ,duration: .15})
+               tl.to(boxNav.current.children[1].children,{opacity: 1,x: 0 ,duration: .15})
+               tl.to(boxNav.current.children[2].children,{opacity: 1,x: 0 ,duration: .15})
 
                gsap.set(btnMenuNav.current,{rotation: 45})
                gsap.set(btnMenuNav.current.children[1],{width: 0})
@@ -43,14 +43,14 @@ export default function Header() {
           }else{
                btnMenuBool.current = false
 
-               tl.to(boxLogo.current,{opacity: 0,scale: 0, duration: .5})
-               tl.to(boxNav.current.children[0].children,{opacity: 0,x: '-100%' ,duration: .5})
-               tl.to(boxNav.current.children[1].children,{opacity: 0,x: '-100%' ,duration: .5})
-               tl.to(boxNav.current.children[2].children,{opacity: 0,x: '-100%' ,duration: .5})
-               tl.to(boxNav.current,{display: 'none'}, '-=.5')
-               tl.to(boxLogo.current,{display: 'none'}, '-=.5')
-               tl.to(boxNav.current,{opacity: 0, duration: .5})
-               tl.to(inner.current,{y: "-100%", duration: .5})
+               tl.to(boxLogo.current,{opacity: 0,scale: 0, duration: .15})
+               tl.to(boxNav.current.children[0].children,{opacity: 0,x: '-100%' ,duration: .15})
+               tl.to(boxNav.current.children[1].children,{opacity: 0,x: '-100%' ,duration: .15})
+               tl.to(boxNav.current.children[2].children,{opacity: 0,x: '-100%' ,duration: .15})
+               tl.to(boxNav.current,{display: 'none'}, '-=.15')
+               tl.to(boxLogo.current,{display: 'none'}, '-=.15')
+               tl.to(boxNav.current,{opacity: 0, duration: .15})
+               tl.to(inner.current,{y: "-100%", duration: .15})
                
                
 
