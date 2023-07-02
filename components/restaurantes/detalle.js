@@ -8,7 +8,7 @@ import { Draggable } from "gsap/dist/Draggable"
 gsap.registerPlugin(Draggable)
 
 import styles from  '../../styles/sass/restaurantes.module.sass'
-export default function detalle() {
+export default function Detalle() {
     let boolInit =  useRef(false)
     let clicNav =  useRef(false)
     useEffect( () => {
