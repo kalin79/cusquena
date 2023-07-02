@@ -9,10 +9,10 @@ gsap.registerPlugin(Draggable)
 
 import styles from  '../../styles/sass/restaurantes.module.sass'
 export default function detalle() {
-    let boolInit = false
-    let clicNav = false
+    let boolInit =  useRef(false)
+    let clicNav =  useRef(false)
     useEffect( () => {
-        if (!boolInit){
+        if (!boolInit.current){
             initDragNavRestaurante()
             updateNavSet()
         }
@@ -59,12 +59,12 @@ export default function detalle() {
                 background: '#D2AF75'
             }
         })
-        clicNav = false
+        clicNav.current = false
     }
 
     const handleRestaurante = (e,id,imagen) => {
-        if (clicNav === false){
-            clicNav = true
+        if (clicNav.current === false){
+            clicNav.current = true
             const btnNav = document.getElementById(`btnNav${id}`)
             console.log(btnNav.classList.contains("active"))
             if (btnNav.classList.contains("active")){

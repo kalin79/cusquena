@@ -12,11 +12,11 @@ export default function Detalle() {
     const btnTab1 = useRef(null)
     const btnTab2 = useRef(null)
     const tabActive = useRef(null)
-    let boolInit = false
+    let boolInit = useRef(null)
     useEffect( () => {
-        if (!boolInit){
+        if (!boolInit.current){
 
-            boolInit = true
+            boolInit.current = true
             btnTab1.current.style.color = '#2D2A26'
             document.body.addEventListener("click", onClickTab)
             initAccordion()
