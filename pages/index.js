@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -97,42 +98,49 @@ export default function Home({userActive,ValidarUser}) {
    }, [])
     
     return (
-        <div className={styles.intro}>
-            <Banner />
-            <div className={`container ${styles.boxContent}`}>
-                
-                <div className={styles.boxFechaReserva}>
-                    <Image  src="/assets/fecha.svg" width="247" height="3" alt='Parque de la Reserva' />
-                </div>
-                <div className={styles.boxValidacion}>
-                    <form
-                        onSubmit={HandleSubmit}
-                        name="ValidacionUsuario"
-                    >
-                        <p>INGRESA TU AÑO DE NACIMIENTO</p>
-                        <div className={styles.boxInputs}>
-                            <input type="text" ref={fechaNac1} name="fecha1" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,1) } onKeyUp= { e => SetValor(e,1) } />
-                            <input type="text" ref={fechaNac2} name="fecha2" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,2) } onKeyUp= { e => SetValor(e,2) } />
-                            <input type="text" ref={fechaNac3} name="fecha3" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,3) } onKeyUp= { e => SetValor(e,3) } />
-                            <input type="text" ref={fechaNac4} name="fecha4" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,4) } onKeyUp= { e => SetValor(e,4) } />
-                            
-                        </div>
-                        <div className={styles.boxError} ref={errorMsn} >
-                            <p>El año que ingreso no es válido!</p>
-                        </div>
-                        <div className={styles.boxButton}>
-                            <button type="submit" className='buttonStyle'>INGRESAR</button>
-                        </div>
-                        <div className={styles.boxIconInca}>
-                            <Image  src="/assets/inca.svg" width="90" height="25" alt='Simbolo Inca' />
-                        </div>
-                    </form>
+        <>
+            <Head>
+                <title>Cusqueña :: Maestros del Sabor</title>
+                <meta name="title" content='Cusqueña :: Maestros del Sabor' />
+                <meta name="description" content='Cusqueña :: Maestros del Sabor' />
+            </Head>
+            <div className={styles.intro}>
+                <Banner />
+                <div className={`container ${styles.boxContent}`}>
+                    
+                    <div className={styles.boxFechaReserva}>
+                        <Image  src="/assets/fecha.svg" width="247" height="3" alt='Parque de la Reserva' />
+                    </div>
+                    <div className={styles.boxValidacion}>
+                        <form
+                            onSubmit={HandleSubmit}
+                            name="ValidacionUsuario"
+                        >
+                            <p>INGRESA TU AÑO DE NACIMIENTO</p>
+                            <div className={styles.boxInputs}>
+                                <input type="text" ref={fechaNac1} name="fecha1" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,1) } onKeyUp= { e => SetValor(e,1) } />
+                                <input type="text" ref={fechaNac2} name="fecha2" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,2) } onKeyUp= { e => SetValor(e,2) } />
+                                <input type="text" ref={fechaNac3} name="fecha3" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,3) } onKeyUp= { e => SetValor(e,3) } />
+                                <input type="text" ref={fechaNac4} name="fecha4" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,4) } onKeyUp= { e => SetValor(e,4) } />
+                                
+                            </div>
+                            <div className={styles.boxError} ref={errorMsn} >
+                                <p>El año que ingreso no es válido!</p>
+                            </div>
+                            <div className={styles.boxButton}>
+                                <button type="submit" className='buttonStyle'>INGRESAR</button>
+                            </div>
+                            <div className={styles.boxIconInca}>
+                                <Image  src="/assets/inca.svg" width="90" height="25" alt='Simbolo Inca' />
+                            </div>
+                        </form>
 
+                    </div>
+                </div>
+                <div className={styles.boxLegal}>
+                    <Image  src="/assets/tomar.svg" width="380" height="20" alt='Legal' />
                 </div>
             </div>
-            <div className={styles.boxLegal}>
-                <Image  src="/assets/tomar.svg" width="380" height="20" alt='Legal' />
-            </div>
-        </div>
+        </>
     )
 }
