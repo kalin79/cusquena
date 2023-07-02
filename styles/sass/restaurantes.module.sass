@@ -1,0 +1,54 @@
+@import 'vars/colors'
+@import 'abstracts/mixins'
+@import 'vars/fonts'
+
+.boxContent
+    border: 0px solid red
+    padding: 3rem 0 8rem
+    .boxDrag
+        position: relative
+        width: 100%
+        height: 120px
+        border: 0px solid red
+        margin-top: 1rem
+        .dragMove
+            position: absolute
+            top: 0
+            left: 0
+            .navRestaurantes
+                display: flex
+                justify-content: left
+                align-items: center
+                button
+                    background: transparent
+                    border: 0
+                    .boxCircle
+                        border: 1px solid $doradoClaro
+                        width: 75px
+                        height: 75px
+                        border-radius: 50%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        margin: 0 auto
+                        img
+                            width: 47px
+                            height: 35px
+                            aspect-ratio: 1 / 1
+                        
+                    p
+                        font-family: $norpethDemiBold
+                        font-size: 16px
+                        line-height: 1.15em
+                        color: $doradoClaro
+                        text-align: center
+                        margin-top: .5rem
+
+    .containerInfo
+        padding-top: 2rem
+        h1
+            font-family: $RodfatTwo
+            font-size: 16px
+            line-height: 1.15em
+            color: $doradoClaro
+            text-align: center

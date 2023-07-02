@@ -6,37 +6,57 @@ body
      background: url('/assets/bgintro2.png')
      background-repeat: repeat
      background-size: 390px 844px
-.dots
-     display: flex
-     justify-content: center
-     gap: 2rem
-     padding: 3rem
-     .dot
-          width: 10px
-          height: 10px
-          background: white
-.sliderContent
-     position: relative
-     overflow: hidden 
-     display: flex
-     flex: 1
+.containerSliders
+     border: 1px solid red
      height: 400px
-     .sliderInner
-          position: relative
-          height: 100%
+     position: relative
+     .hideMe
+          opacity: 0
+     .masterWrap
           width: 100%
+          // height: 100%
+          position: absolute
           overflow: hidden
-          .slide
-               position: absolute
-               font-size: 90px
-               font-weight: 700
-               color: rgba(255,255,255,0.9)
-               display: flex
-               align-items: center
-               justify-content: center
-               height: 100%
-               width: calc(100% / 3)
-               width: 100%
+
+     .panelWrap
+          height: 100%
+
+     section
+          height: 100%
+          display: flex
+          align-content: center
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          font-weight: 700
+          position: relative
+          float: left
+
+     .dot
+          width: 12px
+          height: 12px
+          border-radius: 100%
+          position: relative
+          background-color: #fff
+          margin: 12px 8px
+          cursor: pointer
+          float: left
+
+     .dots
+          position: absolute
+          z-index: 100
+          left: 50%
+          bottom: 16px
+          width: 100%
+          transform: translateX(-50%)
+          display: flex
+          justify-content: center
+
+#leftArrow
+     left: 12px
+
+#rightArrow
+     right: 12px
 .accordion
      border: 0px solid red
      display: flex

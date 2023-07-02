@@ -20,138 +20,177 @@ export default function Detalle() {
             btnTab1.current.style.color = '#2D2A26'
             document.body.addEventListener("click", onClickTab)
             initAccordion()
-            initSlider()
+            initSlider('#sliderConcierto')
         }
     },[])
     
 
-    const initSlider = () => {
+    const initSlider = (idBox) => {
 
-
-        let slideDelay = 4
-        let slideDuration = 0.3
-        let wrap = true
-
-        let slides = document.querySelectorAll("#sliderConcierto .slide")
-        let prevButton = document.querySelector("#sliderConcierto .prevButton")
-        let nextButton = document.querySelector("#sliderConcierto .nextButton")
-        let dotsContent = document.querySelector("#sliderConcierto .dots")
-        let progressWrap = gsap.utils.wrap(0, 1)
-
-        let numSlides = slides.length
-        // console.log('numSlides', numSlides)
-        slides.forEach( function(elem){
-            let element = document.createElement('div')
-            element.className = 'dot'
-            dotsContent.appendChild(element)
-       })
-        gsap.set(slides, {
-            backgroundColor: "random([red, blue, green, purple, orange, yellow, lime, pink])",
-            xPercent: i => i * 100
-        })
-
-        var wrapX = gsap.utils.wrap(-100, (numSlides - 1) * 100)
-        var timer = gsap.delayedCall(slideDelay, autoPlay)
-
-        var animation = gsap.to(slides, {
-            xPercent: "+=" + (numSlides * 100),
-            duration: 1,
-            ease: "none",
-            paused: true,
-            repeat: -1,
-            modifiers: {
-                xPercent: wrapX
-            }
-        })
-
-        var proxy = document.createElement("div")
-        var slideAnimation = gsap.to({}, {})
-        var slideWidth = 0
-        var wrapWidth = 0
-
-        var draggable = new Draggable(proxy, {
-            trigger: "#sliderConcierto .sliderContent",
+        const slides = document.querySelectorAll(`${idBox} section`)
+        const container = document.querySelector(`${idBox} .panelWrap`)
+        let dur = 0.5
+        let offsets = []
+        let oldSlide = 0
+        let activeSlide = 0
+        let dots = document.querySelector(`${idBox} .dots`)
+        let navDots = []
+        let iw = window.innerWidth
+        let autoplay = null
+        
+        //   document.querySelector("#leftArrow").addEventListener("click", slideAnim);
+        //   document.querySelector("#rightArrow").addEventListener("click", slideAnim);
+          
+        // set slides background colors and create the nav dots
+        for (let i = 0; i < slides.length; i++) {
+            // gsap.set(slides[i], { backgroundColor: colorArray[i] })
+            let newDot = document.createElement("div")
+            newDot.className = "dot"
+            newDot.index = i
+            navDots.push(newDot)
+            newDot.addEventListener("click", slideAnim)
+            dots.appendChild(newDot)
+        }
+          
+        // get elements positioned
+        gsap.set(".dots", { xPercent: -50 })
+          
+        // lower screen animation with nav dots and rotating titles
+        const dotAnim = gsap.timeline({ paused: true, repeat: -1 });
+        dotAnim
+            .to(
+                ".dot",
+                {
+                    stagger: { each: 1, yoyo: true, repeat: 1 },
+                    scale: 2.1,
+                    rotation: 0.1,
+                    ease: "none",
+                    backgroundColor: '#BC8B44',
+                },
+                0.5
+            )
+            .time(1)
+          
+        // make the whole thing draggable
+        let dragMe = Draggable.create(container, {
+            type: "x",
+            edgeResistance: 1,
+            snap: offsets,
             inertia: true,
-            onPress: updateDraggable,
-            onDrag: updateProgress,
-            onThrowUpdate: updateProgress,
-            snap: {     
-                x: snapX
+            bounds: "#masterWrap",
+            onDrag: tweenDot,
+            onThrowUpdate: tweenDot,
+            onDragEnd: slideAnim,
+            allowNativeTouchScrolling: false,
+            zIndexBoost: false
+        })
+          
+        dragMe[0].id = "dragger"
+        sizeIt()
+
+
+        const autoPlaySlide = () => {
+            autoplay = setInterval(() => {
+                autoPlaySlider()
+            }, 3000)
+        }
+
+        const stopAutoPlaySlide = () => {
+            clearInterval(autoplay)
+        }
+
+
+        function autoPlaySlider() {
+            
+            activeSlide++
+            // console.log(activeSlide)
+            // console.log(offsets.length)
+            // make sure we're not past the end or beginning slide
+            // activeSlide = activeSlide < 0 ? 0 : activeSlide
+            // activeSlide = activeSlide > slides.length - 1 ? slides.length - 1 : activeSlide
+            if (offsets.length === activeSlide) {
+                oldSlide = 0
+                activeSlide = 0
+                // return
             }
-        })
+            oldSlide = activeSlide
+            gsap.to(container, { x: offsets[activeSlide], onUpdate: tweenDot, duration: dur })
+            
 
-        resize()
-
-        window.addEventListener("resize", resize)
-
-        let dots = document.querySelectorAll("#sliderConcierto .dots .dot")
-
-        dots.forEach(function (dot) {
-            dot.addEventListener("click", function(e) {
-                console.log(e.target)
-                console.log(e)
-                // selectSlide(indice)
-            })
-        })
-
-
-
-        prevButton.addEventListener("click", function() {
-            animateSlides(1)
-        })
-
-        nextButton.addEventListener("click", function() {
-            animateSlides(-1)
-        })
-
-        function updateDraggable() {
-            timer.restart(true)
-            slideAnimation.kill()
-            this.update()
         }
-
-        function animateSlides(direction) {
-            timer.restart(true)
-            slideAnimation.kill()
-            var x = snapX(gsap.getProperty(proxy, "x") + direction * slideWidth)
-            console.log(proxy)
-            console.log(x)
-            slideAnimation = gsap.to(proxy, {
-                x: x,
-                duration: slideDuration,
-                onUpdate: updateProgress
-            })
-        }
-
-        function autoPlay() {  
-            if (draggable.isPressed || draggable.isDragging || draggable.isThrowing) {
-                timer.restart(true)
+          
+        // main action check which of the 4 types of interaction called the function
+        function slideAnim(e) {
+            stopAutoPlaySlide()
+            oldSlide = activeSlide
+            // dragging the panels
+            if (this.id === "dragger") {
+                activeSlide = offsets.indexOf(this.endX)
+                // console.log(this.endX)
             } else {
-                animateSlides(-1)
+                if (gsap.isTweening(container)) {
+                    return
+                }
+                // arrow clicks
+                //   if (this.id === "leftArrow" || this.id === "rightArrow") {
+                //     activeSlide =
+                //       this.id === "rightArrow" ? (activeSlide += 1) : (activeSlide -= 1);
+                //     // click on a dot
+                //   } else 
+                if (this.className === "dot") {
+                    // console.log(this.index)
+                    activeSlide = this.index
+                    // scrollwheel
+                } else {
+                    // si es que quiero que se desplaza al bajar o subir el scroll
+                    //activeSlide = e.deltaY > 0 ? (activeSlide += 1) : (activeSlide -= 1)
+                }
             }
-        }
+            // make sure we're not past the end or beginning slide
+            activeSlide = activeSlide < 0 ? 0 : activeSlide
+            activeSlide = activeSlide > slides.length - 1 ? slides.length - 1 : activeSlide
+            if (oldSlide === activeSlide) {
+                // alert(1)
+                return
+            }
+            // console.log(this.id)
+            // if we're dragging we don't animate the container
+            if (this.id != "dragger") {
+                gsap.to(container, { x: offsets[activeSlide], onUpdate: tweenDot, duration: dur })
+            }
 
-        function updateProgress() { 
-            animation.progress(progressWrap(gsap.getProperty(proxy, "x") / wrapWidth))
+            // autoPlaySlide()
         }
-
-        function snapX(value) {
-            let snapped = gsap.utils.snap(slideWidth, value)
-            return wrap ? snapped : gsap.utils.clamp(-slideWidth * (numSlides - 1), 0, snapped)
+          
+        // update the draggable element snap points
+        function sizeIt() {
+            offsets = []
+            iw = window.innerWidth
+            gsap.set("#panelWrap", { width: slides.length * iw })
+            gsap.set(slides, { width: iw })
+            for (let i = 0; i < slides.length; i++) {
+                offsets.push(-slides[i].offsetLeft)
+            }
+            gsap.set(container, { x: offsets[activeSlide] })
+            dragMe[0].vars.snap = offsets
         }
-
-        function resize() {
-            var norm = (gsap.getProperty(proxy, "x") / wrapWidth) || 0
-            slideWidth = slides[0].offsetWidth
-            wrapWidth = slideWidth * numSlides
-            wrap || draggable.applyBounds({minX: -slideWidth * (numSlides - 1), maxX: 0})
-            gsap.set(proxy, {
-                x: norm * wrapWidth
+          
+        gsap.set(".hideMe", { opacity: 1 })
+        // window.addEventListener("wheel", slideAnim)
+        window.addEventListener("resize", sizeIt)
+        
+          
+        // update dot animation when dragger moves
+        function tweenDot() {
+            // console.log('aqui debemos aplicar la clase de activado')
+            // console.log(Math.abs(gsap.getProperty(container, "x") / iw) + 1)
+            // console.log(dotAnim)
+            gsap.set(dotAnim, {
+              time: Math.abs(gsap.getProperty(container, "x") / iw) + 1
             })
-            animateSlides(0)
-            slideAnimation.progress(1)
         }
-
+        autoPlaySlide()
+        // autoPlay()
 
     }
 
@@ -168,7 +207,7 @@ export default function Detalle() {
             
             //start timeline resting in reversed state
             tl.reverse()
-            console.log(panelContent)
+            // console.log(panelContent)
             element.addEventListener("click", () => {
                 //toggle reversed property of my timeline
                 tl.reversed(!tl.reversed())
@@ -221,8 +260,9 @@ export default function Detalle() {
     return (
         <>
             <div className={styles.boxContent}>
-                <div className='container'>
-                    <div className={styles.containerInfo}>
+                
+                <div className={styles.containerInfo}>
+                    <div className='container'>
                         <h1>SELECCIONE DÍA DEL EVENTO</h1>
                         <div className={styles.boxNavTabs}>
                             <div className={styles.navTabs}>
@@ -236,7 +276,9 @@ export default function Detalle() {
                         <div className={styles.boxIconInca}>
                             <Image  src="/assets/inca.svg" width="90" height="25" alt='Simbolo Inca' />
                         </div>
-                        <div className={styles.boxEventosItinerario}>
+                    </div>
+                    <div className={styles.boxEventosItinerario}>
+                        <div className='container'>
                             <div className={styles.boxExperiencia}>
                                 <div className={styles.boxTitle}>
                                     <h2>Experiencias</h2>
@@ -327,36 +369,130 @@ export default function Detalle() {
 
                                 </div>
                             </div>
-                            <div className={styles.boxConcierto}>
-                                <div className={styles.boxTitle}>
-                                    <h2>conciertos</h2>
-                                    <div className={styles.rombito}></div>
-                                    <div className={`${styles.rombito} ${styles.pos2}`}></div>
-                                </div>
-                                <div id="sliderConcierto" className={styles.containerSliders}>
-                                    <div className='sliderContent'>
-                                        <div className='sliderInner'>
-                                            <div className='slide'>
-                                                1
-                                            </div>
-                                            <div className='slide'>
-                                                2
-                                            </div>
-                                            <div className='slide'>
-                                                3
-                                            </div>
+                        </div>
+                        <div className={styles.boxConcierto}>
+                            <div className={styles.boxTitle}>
+                                <h2>conciertos</h2>
+                                <div className={styles.rombito}></div>
+                                <div className={`${styles.rombito} ${styles.pos2}`}></div>
+                            </div>
+                            <div id="sliderConcierto" className={`containerSliders  ${styles.containerSliders}`} >
+                                <div className={`iconRombo claro ${styles.posRombo}`}></div>
+                                <div className={`iconRombo claro small ${styles.posRombo2}`}></div>
+                                <div className={`iconRombo claro small ${styles.posRombo3}`}></div>
+                                <div className="hideMe">
+                                    <div id="masterWrap" className='masterWrap'>
+                                        <div id="panelWrap" className='panelWrap'>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto1.png" width = '276' height = '276' alt='Bareto' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>bareto</h3>
+                                                            <p>06:00 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto2.png" width = '276' height = '276' alt='la mosca tse-tse' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>la mosca tse-tse</h3>
+                                                            <p>07:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto3.png" width = '276' height = '276' alt='miguel samame' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>miguel samame</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto4.png" width = '276' height = '276' alt='Rio' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>rio</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto5.png" width = '276' height = '276' alt='gin tonic' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>gin tonic</h3>
+                                                            <p>06:45 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto6.png" width = '276' height = '276' alt='DJ Giorgio' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>DJ Giorgio</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto7.png" width = '276' height = '276' alt='DJ luigi' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>DJ luigi</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto8.png" width = '276' height = '276' alt='PSV' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>PSV</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div className={styles.sombraRombo}>
+                                                    <div className={styles.boxConciertoSlider}>
+                                                        <Image src="/assets/bareto9.png" width = '276' height = '276' alt='we the lion' />
+                                                        <div className={styles.conciertoContent}>
+                                                            <h3>we the lion</h3>
+                                                            <p>08:25 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
                                         </div>
                                     </div>
-                                    <div className='controls'>
-                                        <button className='prevButton'>Prev</button>
-                                        <button className='nextButton'>Next</button>
+                                    <div className="dots">
                                     </div>
-                                    <div className='dots'></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </>
     )
