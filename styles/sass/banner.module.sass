@@ -18,7 +18,7 @@
         z-index: 3
 .boxBanner, .boxBanner2
     position: relative
-    margin: 3rem 0 0 0
+    margin: 0rem 0 0 0
     .boxImgLogo
         display: flex
         justify-content: center
@@ -61,7 +61,20 @@
         aspect-ratio: 1 / 1
         position: relative
         z-index: 2
-        object-position: 0px -42px
+        object-position: 0px -26px
+        @media screen and (min-width: 360px)
+            object-position: 0px -17px
+        @media screen and (min-width: 375px)
+            object-position: 0px -28px
+        @media screen and (min-width: 390px)
+            object-position: 0px -39px
+        @media screen and (min-width: 412px)
+            object-position: 0px -66px
+            transform: scale(1.05)
+        @media screen and (min-width: 740px)
+            object-position: 0px -38px
+            transform: scale(1)
+
 
 .boxBanner2
     margin: 0rem 0 0 0
