@@ -95,8 +95,6 @@ export default function Home({userActive,ValidarUser}) {
         if (!boolInit.current ){
             boolInit.current = true
             fechaNac1.current.focus()
-            let a = window.innerWidth
-            alert(a)
         }
         // console.log(userActive)
         // en el caso del html colocamos "?" seria asi * userActive? * 
@@ -123,10 +121,10 @@ export default function Home({userActive,ValidarUser}) {
                         >
                             <p>INGRESA TU AÑO DE NACIMIENTO</p>
                             <div className={styles.boxInputs}>
-                                <input type="text" ref={fechaNac1} name="fecha1" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,1) } onKeyUp= { e => SetValor(e,1) } />
-                                <input type="text" ref={fechaNac2} name="fecha2" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,2) } onKeyUp= { e => SetValor(e,2) } />
-                                <input type="text" ref={fechaNac3} name="fecha3" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,3) } onKeyUp= { e => SetValor(e,3) } />
-                                <input type="text" ref={fechaNac4} name="fecha4" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,4) } onKeyUp= { e => SetValor(e,4) } />
+                                <input type="text" ref={fechaNac1} inputMode="numeric" name="fecha1" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,1) } onKeyUp= { e => SetValor(e,1) } />
+                                <input type="text" ref={fechaNac2} inputMode="numeric" name="fecha2" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,2) } onKeyUp= { e => SetValor(e,2) } />
+                                <input type="text" ref={fechaNac3} inputMode="numeric" name="fecha3" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,3) } onKeyUp= { e => SetValor(e,3) } />
+                                <input type="text" ref={fechaNac4} inputMode="numeric" name="fecha4" maxLength="1" onKeyDown = { e => AnalizamosFecha(e,4) } onKeyUp= { e => SetValor(e,4) } />
                                 
                             </div>
                             <div className={styles.boxError} ref={errorMsn} >
