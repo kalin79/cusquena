@@ -15,7 +15,7 @@ export default function Home({userActive,ValidarUser}) {
     const fechaNac3 = useRef(null)
     const fechaNac4 = useRef(null)
     const errorMsn = useRef(null)
-
+    let boolInit = useRef(false)
     const router = useRouter()
 
     const SetValor = (event,indice) => {
@@ -92,7 +92,12 @@ export default function Home({userActive,ValidarUser}) {
     }
 
     useEffect( () => {
-        fechaNac1.current.focus()
+        if (!boolInit.current ){
+            boolInit.current = true
+            fechaNac1.current.focus()
+            let a = window.innerWidth
+            alert(a)
+        }
         // console.log(userActive)
         // en el caso del html colocamos "?" seria asi * userActive? * 
    }, [])

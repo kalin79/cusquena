@@ -8,6 +8,7 @@
 .iconsRombo
     position: relative
     width: 100%
+    z-index: 35
     .pos1
         bottom: 4rem
         left: 2rem
@@ -45,15 +46,45 @@
             object-fit: contain
     .triangulo
         position: absolute
-        bottom: -6.5rem
+        bottom: -8.9rem
         left: -6rem
-        z-index: 3
+        z-index: 21
+        @media screen and (min-width: 360px)
+            bottom: -7.16rem
+            left: -6.5rem
+        @media screen and (min-width: 375px)
+            bottom: -7.9rem
+            left: -5.5rem
+        @media screen and (min-width: 390px)
+            bottom: -8.5rem
+            left: -5.5rem
+        @media screen and (min-width: 412px)
+            bottom: -9.3rem
+            left: -5.5rem
+        @media screen and (min-width: 414px)
+            bottom: -8.9rem
+            left: -6rem
     .triangulo2
         position: absolute
-        bottom: -6.5rem
+        bottom: -8.9rem
         transform: scale(-1)
         right: -6rem
-        z-index: 3
+        z-index: 21
+        @media screen and (min-width: 360px)
+            bottom: -7.16rem
+            right: -7.5rem
+        @media screen and (min-width: 375px)
+            bottom: -7.9rem
+            right: -5.5rem
+        @media screen and (min-width: 390px)
+            bottom: -8.5rem
+            right: -5.5rem
+        @media screen and (min-width: 412px)
+            bottom: -9.3rem
+            right: -5.5rem
+        @media screen and (min-width: 414px)
+            bottom: -8.9rem
+            right: -6rem
     .banner
         object-fit: cover
         width: 100% 
@@ -61,7 +92,7 @@
         aspect-ratio: 1 / 1
         position: relative
         z-index: 20
-        object-position: 0 -50px
+        object-position: 0 -38px
         // @media screen and (min-width: 360px)
         //     object-position: 0px -17px
         // @media screen and (min-width: 375px)
@@ -79,5 +110,5 @@
 .boxBanner2
     margin: 0rem 0 0 0
     .banner
-        object-position: 0 -50px
+        object-position: 0 -36px
         
