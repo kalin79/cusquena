@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { gsap } from "gsap/dist/gsap"
 import { Draggable } from "gsap/dist/Draggable"
 
+import BtnMenu from '../help/btnmenu2'
+
 gsap.registerPlugin(Draggable)
 
 import styles from  '../../styles/sass/restaurantes.module.sass'
@@ -182,6 +184,31 @@ export default function Detalle() {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className={styles.boxListRestaurantes}>
+                    <div className={styles.boxTitle}>
+                        <h2>carnes</h2>
+                        <div className={styles.rombito}></div>
+                        <div className={`${styles.rombito} ${styles.pos2}`}></div>
+                    </div>
+                    <div className={styles.gridRestaurantes}>
+                        <div className={styles.cardRestaurante}>
+                            <BtnMenu data={ ['primos.svg','/restaurante/carne/primos'] } />
+                        </div>
+                        <div className={styles.cardRestaurante}>
+                            <BtnMenu data={ ['osso.svg','/restaurante/carne/osso'] } />
+                        </div>
+                        <div className={styles.cardRestaurante}>
+                            <BtnMenu data={ ['cumpa.svg','/restaurante/carne/cumpa'] } />
+                        </div>
+                        <div className={styles.cardRestaurante}>
+                            <BtnMenu data={ ['amoramar.svg','/restaurante/carne/amoramar'] } />
+                        </div>
+                        <div className={styles.cardRestaurante}>
+                            <BtnMenu data={ ['chaxras.svg','/restaurante/carne/chaxras'] } />
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </>

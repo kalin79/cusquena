@@ -222,7 +222,7 @@ export default function Detalle() {
         gsap.registerPlugin(CSSRulePlugin)
         const element = e.target
         // console.log(btnTab1.current.contains(element))
-        if (btnTab1.current.contains(element)) {
+        if ((btnTab1.current != null) && (btnTab1.current.contains(element))){
             // alert(1)
             gsap.to(tabActive.current, {left: '0%', duration: 0.5})
             gsap.to(btnTab1.current, {
@@ -239,7 +239,7 @@ export default function Detalle() {
             // btnTab2.current.style.color = '#D2AF75'
 
         }
-        if (btnTab2.current.contains(element)) {
+        if ((btnTab1.current != null) && (btnTab2.current.contains(element))) {
             // alert(2)
             gsap.to(tabActive.current, {left: '50%', duration: 0.5})
             // btnTab2.current.style.color = '#2D2A26'

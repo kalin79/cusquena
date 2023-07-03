@@ -2,6 +2,24 @@
 @import 'abstracts/mixins'
 @import 'vars/fonts'
 
+
+.footerLegalTop
+    height: 38px
+    background: $doradoOscuro    
+    .boxLegal2
+        width: 100%
+        box-sizing: border-box
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        img
+            width: 100%
+            height: 20px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+
 .footerMain
     border-top: 1px solid $doradoClaro
     background: $grisOscuro
@@ -26,15 +44,6 @@
             background-repeat: repeat
             background-position: center
             height: 263px
-    .boxLegal
-        width: 100%
-        box-sizing: border-box
-        padding: 2rem 1rem .5rem
-        img
-            width: 100%
-            height: 20px
-            aspect-ratio: 1 / 1
-            object-fit: contain
     .boxBackus
         background: $doradoOscuro
         padding: .5rem 0
@@ -46,6 +55,16 @@
             height: 34px
             aspect-ratio: 1 / 1
             object-fit: contain
+    .boxLegal
+        width: 100%
+        box-sizing: border-box
+        padding: 2rem 1rem .5rem
+        img
+            width: 100%
+            height: 20px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+    
     .boxLogo
         margin-bottom: 2rem
         img

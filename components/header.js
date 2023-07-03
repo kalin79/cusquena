@@ -33,6 +33,7 @@ export default function Header() {
                tl.to(boxNav.current.children[0].children,{opacity: 1,x: 0 ,duration: .15})
                tl.to(boxNav.current.children[1].children,{opacity: 1,x: 0 ,duration: .15})
                tl.to(boxNav.current.children[2].children,{opacity: 1,x: 0 ,duration: .15})
+               tl.to(boxNav.current.children[3].children,{opacity: 1,x: 0 ,duration: .15})
 
                gsap.set(btnMenuNav.current,{rotation: 45})
                gsap.set(btnMenuNav.current.children[1],{width: 0})
@@ -47,6 +48,7 @@ export default function Header() {
                tl.to(boxNav.current.children[0].children,{opacity: 0,x: '-100%' ,duration: .15})
                tl.to(boxNav.current.children[1].children,{opacity: 0,x: '-100%' ,duration: .15})
                tl.to(boxNav.current.children[2].children,{opacity: 0,x: '-100%' ,duration: .15})
+               tl.to(boxNav.current.children[3].children,{opacity: 0,x: '-100%' ,duration: .15})
                tl.to(boxNav.current,{display: 'none'}, '-=.15')
                tl.to(boxLogo.current,{display: 'none'}, '-=.15')
                tl.to(boxNav.current,{opacity: 0, duration: .15})
@@ -83,7 +85,7 @@ export default function Header() {
                               </button>
                               <div className={styles.boxLogo}>
                                    <Link href='/inicio'>
-                                        <Image src='/assets/logocuzquena.svg' alt='logo' width={90} height={30} />
+                                        <Image src='/assets/logoIntro.svg' alt='logo' width={110} height={62} />
                                    </Link>
                               </div>
                               <nav className={styles.boxNavMenu}>
@@ -91,6 +93,7 @@ export default function Header() {
                                         <Image src='/assets/logoIntro.svg' alt='Maestros del Sabor :: El Festival' width={200} height={120}  />
                                    </div>
                                    <div ref={boxNav} className={styles.navMenu}>
+                                        <Link href='/inicio'><span>INICIO</span></Link>
                                         <Link href='/itinerario'><span>ITINERARIO DEL EVENTO</span></Link>
                                         <Link href='/restaurantes'><span>LISTA DE RESTAURANTES</span></Link>
                                         <Link href='/mapa'><span>MAPA DEL EVENTO</span></Link>
