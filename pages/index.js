@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-import Banner from '../components/home/banner'
+import Banner from '../components/home/bannervalid'
 
 
 import styles from  '@/styles/sass/intro.module.sass'
