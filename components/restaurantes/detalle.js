@@ -101,7 +101,7 @@ export default function Detalle() {
             type: "x", 
             inertia: true
         })
-        addEventListener("resize", onrizeElementRestaurante)
+        window.addEventListener("resize", onrizeElementRestaurante)
     }
 
     return (
