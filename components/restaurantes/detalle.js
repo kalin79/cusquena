@@ -17,7 +17,7 @@ export default function Detalle() {
         if (!boolInit.current){
             initDragNavRestaurante()
             updateNavSet()
-            addEventListener("resize", onrizeElement)
+            addEventListener("resize", onrizeElementRestaurante)
         }
     },[]) 
 
@@ -84,8 +84,8 @@ export default function Detalle() {
         
     }
 
-    const onrizeElement = () => {
-        console.log('edd')
+    const onrizeElementRestaurante = () => {
+        // console.log('edd')
         let boxNavDrag = document.getElementById('dragMove')
         let dragContainer = document.getElementById('boxDragRestaurante')
         Draggable.get(boxNavDrag).kill()
