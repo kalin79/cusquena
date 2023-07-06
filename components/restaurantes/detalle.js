@@ -17,7 +17,7 @@ export default function Detalle() {
         if (!boolInit.current){
             initDragNavRestaurante()
             updateNavSet()
-            addEventListener("resize", onrizeElementRestaurante)
+            
         }
     },[]) 
 
@@ -101,6 +101,7 @@ export default function Detalle() {
             type: "x", 
             inertia: true
         })
+        addEventListener("resize", onrizeElementRestaurante)
     }
 
     return (
