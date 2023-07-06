@@ -11,7 +11,7 @@ export default function Restaurantes() {
                     title={'Restaurantes :: Cusqueña, Maestros del Sabor'}
                     description={'Restaurantes :: Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['Restaurantes <br />del evento','iconorestaurante.svg', '48', '42','itinerario','Descubre los sabores que nos acompañan.'] } />
+                    <BannerPrincial data={ ['Restaurantes <br />del evento','iconorestaurante.svg', '48', '42','itinerario','Descubre los diferentes restaurantes que conquistarán tu paladar en nuestro festival.','iconRestaurante'] } />
                     <Detalle />
                 </Layout> 
             </div>

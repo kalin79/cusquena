@@ -10,7 +10,7 @@ export default function Mapa() {
                     title={'Mapa :: Cusqueña, Maestros del Sabor'}
                     description={'Mapa :: Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['mapa <br/>del evento','iconmapa2.svg', '48', '40','itinerario','¡Prepárate para una experiencia gastronómica única! Sigue el mapa'] } />
+                    <BannerPrincial data={ ['mapa <br/>del evento','iconmapa2.svg', '48', '40','itinerario','Encuentra la ruta hacia la experiencia que buscas.','iconMapa'] } />
                     <Detalle />
                 </Layout> 
             </div>   

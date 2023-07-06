@@ -17,13 +17,19 @@ const Banner = ({data}) => {
                     <Image  src="/assets/logoIntro.svg" width="247" height="375" alt='Maestros del Sabor el Festival' />
                 </div> */}
             </div>
+            <div className={`${styles.boxCabeceraPC} ${styles.large}`}>
+                {/* <div className={`iconRombo claro small ${styles.pos1}`}></div>
+                <div className={`iconRombo claro ${styles.pos2}`}></div> */}
+                <Image  src="/assets/cabeceraPC.png" priority={true} className={styles.banner} width="1440" height="606" alt='Verificacion de edad' />
+            </div>
             <div className={styles.iconsRombo}>
-            <div className={`iconRombo claro small ${styles.pos1}`}></div>
-            <div className={`iconRombo claro ${styles.pos2}`}></div>
-                <div className={`boxContenidoRombo ${styles.posRombo}`}>
+                
+                <div className={`boxContenidoRombo ${styles.posRombo} romboBannerCabecera`}>
+                    <div className={`iconRombo claro small ${styles.pos1}`}></div>
+                    <div className={`iconRombo claro ${styles.pos2}`}></div>
                     <div className='romboPrincipal'>
                         <div className='boxInfo'>
-                            <div className={'boxIcon'}>
+                            <div className={`boxIcon ${data[6]}`}>
                                 <Image src={`/assets/${data[1]}`} width={data[2]} height={data[3]} alt={data[0]}  />
                             </div>
                             <h2 dangerouslySetInnerHTML={ createMarkup() }></h2>

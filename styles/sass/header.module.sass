@@ -5,12 +5,18 @@
 .headerMain
     position: fixed
     width: 100%
-    background: $grisOscuro
+    background: url('/assets/patron4.png')
+    background-repeat: repeat
     padding: 1.5rem 0
-    z-index: 100
+    z-index: 3000
+    @media screen and (min-width: 992px)
+        padding: 0rem 0 2rem
     .containerMovil
         padding: 0
         margin: 0
+        @media screen and (min-width: 992px)
+            padding: 0
+            margin: auto
     .inner
         background: $grisOscuro
         position: absolute
@@ -20,6 +26,10 @@
         height: 100vh
         z-index: 2
         transform: translateY(-100%)
+        @media screen and (min-width: 992px)
+            // height: auto !important
+            transform: translateY(-100%) !important
+
         .boxLegal
             border: 1px solid rgba($grisOscuro,.75)
             height: 100%
@@ -37,14 +47,22 @@
         gap: 1rem
         position: relative
         z-index: 3
+        @media screen and (min-width: 992px)
+            grid-template-columns: repeat(1,minmax(0,1fr))
         .boxNavMenu
             position: absolute
             width: 100%
             top: 8rem
+            @media screen and (min-width: 992px)
+                position: relative
+                top: 0
             .boxLogoNav
                 display: none
                 justify-content: center
                 opacity: 0
+                @media screen and (min-width: 992px)
+                    display: none !important
+                    opacity: 0 !important
             .navMenu
                 padding-top: 2rem
                 display: none
@@ -52,6 +70,15 @@
                 align-items: flex-start
                 flex-direction: column
                 opacity: 0
+                @media screen and (min-width: 992px)
+                    // display: flex
+                    // flex-direction: row
+                    opacity: 1 !important
+                    display: grid !important
+                    grid-template-columns: repeat(12,minmax(0,1fr))
+                    align-items: center
+                    justify-content: start
+
                 a   
                     text-decoration: none
                     border-top: 1px solid rgba($dorado,.75)
@@ -59,16 +86,37 @@
                     width: 100%
                     box-sizing: border-box
                     padding-left: 1.5rem
+                    text-align: left
+                    @media screen and (min-width: 992px)
+                        border-top: 0px solid rgba($dorado,.75)
+                        padding: 0rem 0
+                        text-align: center
+                        &:nth-of-type(1)
+                            grid-column: 3 / span 1
+                        &:nth-of-type(2)
+                            grid-column: 4 / span 2
+                        &:nth-of-type(3)
+                            grid-column: 8 / span 2
+                        &:nth-of-type(4)
+                            grid-column: 10 / span 2
+                    
                     span
-                        font-family: $norpeth
+                        font-family: $norpethDemiBold
                         font-size: 16px
                         line-height: 1.5em
-                        color: $dorado
+                        color: rgba($doradoClaro, 1)
                         text-align: left
                         opacity: 0
                         display: inline-block
+                        @media screen and (min-width: 992px)
+                            opacity: 1 !important
+                            transform: none !important
+                            font-size: 14px
+                            text-align: center
                     &:last-child
                         border-bottom: 1px solid rgba($dorado,.75)
+                        @media screen and (min-width: 992px)
+                            border-bottom: 0px solid rgba($dorado,.75)
                         
                         
 
@@ -80,6 +128,8 @@
             border: 0
             position: relative
             margin-left: 1rem
+            @media screen and (min-width: 992px)
+                display: none
             .lineMenu
                 width: 32px
                 height: 2px
@@ -98,4 +148,8 @@
             position: absolute
             top: 50%
             left: 50%
-            transform: translate(-50%, -50%)
+            transform: translate(-50%,-50%)
+            z-index: 4
+            @media screen and (min-width: 992px)
+                top: 1rem
+                transform: translateX(-50%)

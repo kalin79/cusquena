@@ -3,6 +3,35 @@
 @import 'vars/fonts'
 .restauranteContendorDetalle
     padding: 0 0 5rem 0
+    @media screen and (min-width: 992px)
+        padding: 0 0 15rem 0
+    .gridRestaurante
+        display: grid
+        grid-template-rows: repeat(2,1fr)
+        @media screen and (min-width: 992px)
+            grid-template-rows: repeat(1,1fr)
+            grid-template-columns: repeat(12,1fr)
+        .boxPlato
+            &:nth-of-type(1)
+                @media screen and (min-width: 992px)
+                    grid-column: 1 / span 6
+            &:nth-of-type(2)
+                @media screen and (min-width: 992px)
+                    grid-column: 7 / -1
+            
+            .boxBotella
+                border: 0px solid red
+                width: 291px
+                height: 268px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+                    // aspect-ratio: 1 / 1
+            .linesSeparateRes
+                display: block
+                @media screen and (min-width: 992px)
+                    display: none
     .boxPlato
         margin-top: 4.5rem
         h2
@@ -25,51 +54,163 @@
 .boxContent
     border: 0px solid red
     padding: 3rem 0 5rem
+    @media screen and (min-width: 992px)
+        padding: 3rem 0 15rem
     .boxListRestaurantes
         margin: 0 auto
+        padding: 0
         text-align: center
         padding-top: 3rem
         width: 390px
         border: 0px solid red
+        position: relative
+        @media screen and (min-width: 992px)
+            width: 900px
+            margin: 0 auto
+        @media screen and (min-width: 1200px)
+            width: 1140px
+        .pos1
+            display: none
+            @media screen and (min-width: 992px)
+                top: 28rem
+                left: 3.25rem
+                display: block
+            @media screen and (min-width: 1200px)
+                top: 28rem
+                left: -.5rem
+               
+        .pos2
+            display: none
+            @media screen and (min-width: 992px)
+                top: 12.5rem
+                left: 33rem
+                display: block
+            @media screen and (min-width: 1200px)
+                top: 12.5rem
+                left: 41.5rem
+        .pos3
+            display: none
+            @media screen and (min-width: 992px)
+                top: 32.1rem
+                right: 7.25rem
+                display: block
+            @media screen and (min-width: 1200px)
+                top: 36.95rem
+                right: 9.25rem
+                display: block
+        .pos4
+            display: none
+            @media screen and (min-width: 992px)
+                top: 39.09rem
+                left: 27rem
+                display: block
+            @media screen and (min-width: 1200px)
+                top: 43.09rem
+                left: 34.55rem
         .gridRestaurantes
             margin-top: 3rem
             display: grid
             grid-template-columns: repeat(4, 1fr)
+            @media screen and (min-width: 992px)
+                grid-template-columns: repeat(12, 1fr)
+                margin-top: 6rem
             .cardRestaurante
                 border: 0px solid red
                 grid-column: 1 / -1
                 position: relative
-                height: 266px
+                cursor: pointer
+                // transition: .5s ease-in-out transform
+                // &:hover
+                //     transform: scale(1.15)
+                //     z-index: 40
+                .boxContenidoRombo
+                    width: 264px
+                    height: 264px
+                    @media screen and (min-width: 992px)
+                        width: 300px
+                        height: 300px
+                    @media screen and (min-width: 1200px)
+                        width: 380px
+                        height: 380px
+                    .boxLogoRest
+                        border: 0px solid red
+                        width: 120px
+                        height: 90px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        flex-direction: column
+                        margin-top: -2rem
+                        @media screen and (min-width: 992px)
+                            width: 202px
+                            height: 162px
+                        img
+                            width: 100%
+                            height: auto
+                            transition: .5s ease-in-out transform
+                            &:hover
+                                transform: scale(1.05)
+                                z-index: 40
+                            
                 &:nth-of-type(1)
                     justify-self: start
                     left: .5rem
                     border: 0px solid red
                     z-index: 5
+                    @media screen and (min-width: 992px)
+                        grid-column: 2 / span 3
+                        left: -2.5rem
+                    @media screen and (min-width: 1200px)
+                        left: -3.85rem
                 &:nth-of-type(2)
                     justify-self: end
                     margin-top: -6.3rem 
                     right: .5rem
                     border: 0px solid green
                     z-index: 4
+                    @media screen and (min-width: 992px)
+                        grid-column: 5 / span 4
+                        right: 0rem
+                        margin-top: -3rem 
+                        justify-self: center
                 &:nth-of-type(3)
                     justify-self: start
                     margin-top: -6.25rem
                     left: .5rem
                     border: 0px solid yellow
                     z-index: 3
+                    @media screen and (min-width: 992px)
+                        grid-column: 9 / -1
+                        margin-top: 0rem
+                        left: -2.25rem
                 &:nth-of-type(4)
                     justify-self: end
                     margin-top: -6.25rem
                     right: .5rem
                     border: 0px solid purple
                     z-index: 2
+                    @media screen and (min-width: 992px)
+                        grid-column: 3 / span 4
+                        margin-top: -5.5rem
+                        right:  auto
+                        left: -0.75rem
+                    @media screen and (min-width: 1200px)
+                        margin-top: -8.5rem
+                        left: -0.5rem
                 &:nth-of-type(5)
                     justify-self: start
                     margin-top: -6.25rem
                     left: .5rem
                     border: 0px solid brown
                     z-index: 1
-
+                    @media screen and (min-width: 992px)
+                        grid-column: 7 / span 4
+                        margin-top: -5.5rem
+                        right: auto
+                        left: 0.75rem
+                    @media screen and (min-width: 1200px)
+                        margin-top: -8.5rem
+                        left: 0.5rem
                     
         .boxTitle
             display: inline-block
@@ -80,14 +221,14 @@
                 position: absolute
                 top: 50%
                 transform: translateY(-65%) rotate(45deg)
-                left: -22px
+                left: -37px
                 border: 4px solid $doradoClaro
                 width: 12px
                 height: 12px
                 box-sizing: border-box
                 &.pos2
                     left: auto
-                    right: -22px
+                    right: -37px
             h2
                 font-family: $RodfatTwo
                 font-size: 22px
@@ -96,21 +237,39 @@
                 text-align: center
                 text-transform: uppercase
                 margin: 0 0 0rem 0
+                @media screen and (min-width: 992px)
+                    font-size: 32px
+                    line-height: 1.15em
+            .pos1
+                top: -6rem
+                left: -24rem
+                display: none 
+                @media screen and (min-width: 992px)
+                    display: block
     .boxDrag
         position: relative
         width: 100%
         height: 120px
         border: 0px solid red
-        margin-top: 1rem
+        margin: 1rem 0 0
         z-index: 3
+        @media screen and (min-width: 992px)
+            width: 645px
+            min-height: 252px
+            border: 0px solid red
+            margin: 3.5rem auto 2rem
         .dragMove
             position: absolute
             top: 0
             left: 0
             .navRestaurantes
                 display: flex
-                justify-content: left
+                justify-content: flex-start
                 align-items: center
+                @media screen and (min-width: 992px)
+                    justify-content: center
+                    flex-wrap: wrap
+                    row-gap: 1rem
                 button
                     background: transparent
                     border: 0
@@ -140,7 +299,10 @@
         padding-top: 2rem
         h1
             font-family: $RodfatTwo
-            font-size: 16px
+            font-size: 14px
             line-height: 1.15em
+            // letter-spacing: -.25em
             color: $doradoClaro
             text-align: center
+            @media screen and (min-width: 992px)
+                font-size: 22px

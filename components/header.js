@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,6 +8,7 @@ import { gsap } from "gsap"
 
 import styles from  '../styles/sass/header.module.sass'
 export default function Header() {
+     const router = useRouter()
      const btnMenuNav = useRef(null)
      const inner = useRef(null)
      const boxLogo = useRef(null)
@@ -43,7 +44,6 @@ export default function Header() {
                gsap.to(btnMenuNav.current.children[2],{rotation: 90})
           }else{
                btnMenuBool.current = false
-
                tl.to(boxLogo.current,{opacity: 0,scale: 0, duration: .15})
                tl.to(boxNav.current.children[0].children,{opacity: 0,x: '-100%' ,duration: .15})
                tl.to(boxNav.current.children[1].children,{opacity: 0,x: '-100%' ,duration: .15})
@@ -93,10 +93,10 @@ export default function Header() {
                                         <Image src='/assets/logoIntro.svg' alt='Maestros del Sabor :: El Festival' width={200} height={120}  />
                                    </div>
                                    <div ref={boxNav} className={styles.navMenu}>
-                                        <Link href='/inicio'><span>INICIO</span></Link>
-                                        <Link href='/itinerario'><span>ITINERARIO DEL EVENTO</span></Link>
-                                        <Link href='/restaurantes'><span>LISTA DE RESTAURANTES</span></Link>
-                                        <Link href='/mapa'><span>MAPA DEL EVENTO</span></Link>
+                                        <Link href='/inicio' className={router.pathname == "/" ? "active" : ""}><span>INICIO</span></Link>
+                                        <Link href='/itinerario' className={router.pathname == "/itinerario" ? "active" : ""}><span>ITINERARIO DEL EVENTO</span></Link>
+                                        <Link href='/restaurantes' className={router.pathname == "/restaurantes" ? "active" : ""}><span>LISTA DE RESTAURANTES</span></Link>
+                                        <Link href='/mapa' className={router.pathname == "/mapa" ? "active" : ""}><span>MAPA DEL EVENTO</span></Link>
                                    </div>
                               </nav>
                          </div>

@@ -6,6 +6,8 @@
 .footerLegalTop
     height: 38px
     background: $doradoOscuro    
+    @media screen and (min-width: 992px)
+        height: 60px
     .boxLegal2
         width: 100%
         box-sizing: border-box
@@ -19,6 +21,11 @@
             height: 20px
             aspect-ratio: 1 / 1
             object-fit: contain
+            margin-top: 0px
+            @media screen and (min-width: 992px)
+                width: 880px
+                height: 45px
+                margin-top: -10px
 
 .footerMain
     border-top: 1px solid $doradoClaro
@@ -32,6 +39,29 @@
     flex-wrap: wrap
     position: relative
     flex-direction: column
+    .gridFooter
+        display: grid
+        grid-template-columns: repeat(1,1fr)
+        justify-items: center
+        align-items: center
+        gap: 1.75rem
+        position: relative
+        z-index: 10
+        @media screen and (min-width: 992px)
+            grid-template-columns: repeat(12,1fr)
+            justify-items: start
+            align-items: start
+            gap: 1rem
+        .boxLogo
+            @media screen and (min-width: 992px)
+                grid-column: 2 / span 4
+        .boxLogoCusquena
+            @media screen and (min-width: 992px)
+                grid-column: 6 / span 2
+        .navFooter
+            @media screen and (min-width: 992px)
+                grid-column: 10 / -1
+
     .patron
         position: absolute
         bottom: 0
@@ -59,14 +89,21 @@
         width: 100%
         box-sizing: border-box
         padding: 2rem 1rem .5rem
+        display: flex
+        justify-content: center
+        align-items: center
+        @media screen and (min-width: 992px)
+            padding: 4rem 1rem .5rem
         img
             width: 100%
             height: 20px
             aspect-ratio: 1 / 1
             object-fit: contain
-    
+            @media screen and (min-width: 992px)
+                width: 350px
+                height: 20px
     .boxLogo
-        margin-bottom: 2rem
+        margin-bottom: 0rem
         img
             width: 160px
             height: 65px
@@ -78,24 +115,57 @@
             height: 120px
             aspect-ratio: 1 / 1
             object-fit: contain
-    nav
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-wrap: wrap
-        margin-top: 1.75rem
-        position: relative
-        z-index: 10
-        a
-            // border-top: 1px solid $doradoClaro
-            width: 100%
-            padding: .5rem 0
+    .navFooter
+        h3
             font-family: $norpeth
             font-size: 16px
             line-height: 1.5em
             color: $doradoClaro
             text-align: center
-            text-decoration: none
+            margin: 0
+            @media screen and (min-width: 992px)
+                text-align: left
+
+        nav
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-wrap: wrap
+            flex-direction: column
+            // margin-top: 1.75rem
+            // position: relative
+            // z-index: 10
+            @media screen and (min-width: 992px)
+                align-items: flex-start
+            a
+                // border-top: 1px solid $doradoClaro
+                // width: 100%
+                // padding: .5rem 0
+                font-family: $norpethDemiBold
+                font-size: 14px
+                line-height: 2.5em
+                color: rgba($doradoClaro, .75)
+                text-align: center
+                text-decoration: none
+                position: relative
+                padding-left: 0rem
+                text-transform: uppercase
+                @media screen and (min-width: 992px)
+                    text-align: left
+                    padding-left: 1rem
+                    line-height: 2em
+                &:before
+                    @media screen and (min-width: 992px)
+                        content: ''
+                        position: absolute
+                        width: 5px
+                        height: 5px
+                        border-radius: 50%
+                        background: $doradoClaro
+                        top: 50%
+                        left: 6px
+                        transform: translateY(-50%)
+
             // &:last-child
                 // border-bottom: 1px solid $doradoClaro
                 

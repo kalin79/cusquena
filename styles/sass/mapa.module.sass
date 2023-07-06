@@ -7,18 +7,24 @@
     padding: 3rem 0 8rem
     .boxPing
         border: 0px solid red
-        display: flex
-        justify-content: flex-start
-        align-items: flex-start
-        flex-direction: column
-        gap: .5rem
+        display: grid
+        grid-template-columns: repeat(1,1fr)
+        gap: 1rem
         margin-top: 2.5rem
+        @media screen and (min-width: 992px)
+            grid-template-columns: repeat(12,1fr)
         .listPing
             display: flex
             justify-content: flex-start
             align-items: center
             gap: .5rem
-
+            &:nth-of-type(2n+1)
+                @media screen and (min-width: 992px)
+                    grid-column: 4 / span 3
+            &:nth-of-type(2n)
+                @media screen and (min-width: 992px)
+                    grid-column: 7 / -1
+            
             .circle
                 width: 24px
                 height: 24px
@@ -29,6 +35,14 @@
                 justify-content: center
                 align-items: center
                 flex-wrap: wrap
+                font-family: $norpethDemiBold
+                font-size: 16px
+                line-height: 1em
+                color: $grisOscuro
+                text-align: left
+                margin: 0
+                @media screen and (min-width: 992px)
+                    font-size: 20px
                 
             p
                 font-family: $norpethDemiBold
@@ -37,16 +51,21 @@
                 color: white
                 text-align: left
                 margin: 0
+                @media screen and (min-width: 992px)
+                    font-size: 22px
     .bgMapa
         height: 689px
         width: 100%
         overflow: hidden
         position: relative
-        margin-top: 1rem
+        margin: 1.5rem auto 0
         .mapaDrag
             position: absolute
             top: 0
             left: 0
+            @media screen and (min-width: 992px)
+                left: 50%
+                transform: translateX(-50%) !important
             img
                 width: 1224px
                 height: 689px
@@ -55,6 +74,21 @@
     .containerInfo
         margin: 6rem auto 0
         text-align: center
+        @media screen and (min-width: 992px)
+            margin: 2rem auto 0
+        .subBoxTitle
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-top: 0rem
+            gap: 1rem
+            h2
+                font-family: $norpeth
+                font-size: 18px
+                line-height: 1.15em
+                color: rgba($doradoClaro,1)
+                text-align: left
+                margin: 0
         .boxTitle
             display: inline-block
             border: 0px solid red
@@ -79,3 +113,5 @@
             color: $doradoClaro
             text-align: center
             margin: 0
+            @media screen and (min-width: 992px)
+                font-size: 32px

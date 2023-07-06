@@ -17,6 +17,7 @@ export default function Detalle() {
         if (!boolInit.current){
             initDragNavRestaurante()
             updateNavSet()
+            addEventListener("resize", onrizeElement)
         }
     },[]) 
 
@@ -82,6 +83,15 @@ export default function Detalle() {
 
         
     }
+
+    const onrizeElement = () => {
+        console.log('edd')
+        let boxNavDrag = document.getElementById('dragMove')
+        let dragContainer = document.getElementById('boxDragRestaurante')
+        Draggable.get(boxNavDrag).kill()
+        initDragNavRestaurante()
+    }
+
     const initDragNavRestaurante = () => {
         let boxNavDrag = document.getElementById('dragMove')
         let dragContainer = document.getElementById('boxDragRestaurante')
@@ -98,7 +108,7 @@ export default function Detalle() {
             <div className={styles.boxContent}>
                 <div className={styles.containerInfo}>
                     <div className='container'>
-                        <h1>¿A dónde vamos a comer hoy?</h1>
+                        <h1>selecciona la categoría que deseas ver</h1>
                     </div>
                     <div className={styles.boxDrag} id="boxDragRestaurante">
                         <div className={styles.dragMove} id="dragMove">
@@ -185,9 +195,15 @@ export default function Detalle() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.boxListRestaurantes}>
+                <div className={`${styles.boxListRestaurantes} container`}>
+                    <div className={`iconRombo claro ${styles.pos1}`}></div>
+                    <div className={`iconRombo claro ${styles.pos2}`}></div>
+                    <div className={`iconRombo claro ${styles.pos3}`}></div>
+                    <div className={`iconRombo small claro ${styles.pos4}`}></div>
+
                     <div className={styles.boxTitle}>
-                        <h2>carnes</h2>
+                        <h2>restaurantes <br />de carnes</h2>
+                        <div className={`iconRombo claro big ${styles.pos1}`}></div>
                         <div className={styles.rombito}></div>
                         <div className={`${styles.rombito} ${styles.pos2}`}></div>
                     </div>

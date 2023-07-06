@@ -14,6 +14,9 @@ export default function Banner() {
                          <Image  src="/assets/logoIntro.svg" width="247" height="375" alt='Maestros del Sabor el Festival' />
                     </div> */}
                </div>
+               <div className={`${styles.boxCabeceraPC} ${styles.large}`}>
+                    <Image  src="/assets/cabeceraPC.png" priority={true} className={styles.banner} width="1440" height="606" alt='Verificacion de edad' />
+               </div>
           </>
      )
 }

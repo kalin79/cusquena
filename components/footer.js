@@ -12,19 +12,27 @@ export default function Footer() {
                     </div>
                </div>
                <footer className={styles.footerMain}>
-                    <div className={styles.boxLogo}>
-                         <Link href='/inicio'>
-                              <Image src='/assets/logocuzquena.svg' alt='logo' width={90} height={30} />
-                         </Link>
+                    <div className={styles.gridFooter}>
+                         <div className={styles.boxLogo}>
+                              <Link href='/inicio'>
+                                   <Image src='/assets/logocuzquena.svg' alt='logo' width={90} height={30} />
+                              </Link>
+                         </div>
+                         <div className={styles.boxLogoCusquena}>
+                              <Image src='/assets/logoIntro.svg' alt='logo' width={247} height={375} />
+                         </div>
+                         <div className={styles.navFooter}>
+                              <h3>MAPA DEL SITIO</h3>
+                              <nav>
+                                   <Link href='/inicio'><span>Inicio</span></Link>
+                                   <Link href='/itinerario'><span>ITINERARIO DEL EVENTO</span></Link>
+                                   <Link href='/restaurantes'><span>LISTA DE RESTAURANTES</span></Link>
+                                   <Link href='/mapa'><span>MAPA DEL EVENTO</span></Link>
+                                   <Link href='/preguntas-frecuentes'><span>PREGUNTAS FRECUENTES</span></Link>
+                              </nav>
+                         </div>
+                         
                     </div>
-                    <div className={styles.boxLogoCusquena}>
-                         <Image src='/assets/logoIntro.svg' alt='logo' width={247} height={375} />
-                    </div>
-                    <nav>
-                         <Link href='/itinerario'><span>ITINERARIO DEL EVENTO</span></Link>
-                         <Link href='/restaurantes'><span>LISTA DE RESTAURANTES</span></Link>
-                         <Link href='/mapa'><span>MAPA DEL EVENTO</span></Link>
-                    </nav>
                     <div className={styles.patron}>
                          <div className={styles.bcg}></div>
                     </div>

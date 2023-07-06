@@ -10,7 +10,7 @@ const Itinerario = () => {
                     title={'Itinerario :: Cusqueña, Maestros del Sabor'}
                     description={'Itinerario :: Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['Itinerario <br />del evento','ubicacion.svg', '40', '43','itinerario','Master clases, catas de maridaje, listado de artistas y los horarios de presentación.'] } />
+                    <BannerPrincial data={ ['Itinerario <br />del evento','ubicacion.svg', '40', '43','itinerario','Descubre los horarios de cada experiencia gastronómica, nuestras clases maestras y las mejores bandas nacionales e internacionales del festival.',''] } />
                     <Detalle />
                 </Layout>
             </div>

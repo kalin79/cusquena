@@ -141,7 +141,7 @@ export default function Home({userActive,ValidarUser}) {
                     </div>
                 </div>
                 <div className={styles.boxLegal}>
-                    <Image  src="/assets/tomar.svg" width="380" height="20" alt='Legal' />
+                    <Image  src="/assets/tomar3.svg" width="580" height="29" alt='Legal' />
                 </div>
             </div>
         </>

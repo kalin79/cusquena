@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 
 import Image from 'next/image'
+import styles from  '../../styles/sass/home.module.sass'
 
 // import { gsap } from "gsap"
 export default function BtnMenu({data}){
@@ -14,7 +15,7 @@ export default function BtnMenu({data}){
         router.push(`/${slug}`)
     }
     return(
-        <div className='boxContenidoRombo' onClick={ () => handleClic(data[4])}>
+        <div className={`boxContenidoRombo ${styles.boxContenidoRombo}`} onClick={ () => handleClic(data[4])}>
             <div className='romboSecundario'></div>
             <div className='romboPrincipal'>
                 <div className='boxInfo'>
@@ -22,7 +23,9 @@ export default function BtnMenu({data}){
                         <Image src={`/assets/${data[1]}`} width={data[2]} height={data[3]} alt={data[0]}  />
                     </div>
                     <h2 dangerouslySetInnerHTML={ createMarkup() }></h2>
-                    <p>MÁS <br />INFORMACIÓN</p>
+                    <div className='boxPcontainer'>
+                        <p className='botonRestaurante big'>MÁS <br />INFORMACIÓN</p>
+                    </div>
                 </div>
             </div>
         </div>

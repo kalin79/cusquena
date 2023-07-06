@@ -2,8 +2,13 @@ import { useEffect, useRef } from 'react'
 
 import Image from 'next/image'
 
+import SectionConcierto from '../itinerario/concierto'
+import SectionConcierto2 from '../itinerario/concierto2'
+
 import { gsap } from "gsap/dist/gsap"
 import { Draggable } from "gsap/dist/Draggable"
+
+
 
 gsap.registerPlugin(Draggable)
 
@@ -21,9 +26,21 @@ export default function Detalle() {
             document.body.addEventListener("click", onClickTab)
             initAccordion()
             initSlider('#sliderConcierto')
+            initConciertoPC()
         }
     },[])
     
+
+    const initConciertoPC = () => {
+        let conciertoDrag = document.getElementById('conciertoDrag')
+        let conciertoMoveDrag = document.getElementById('conciertoMoveDrag')
+        let navDrag = Draggable.create(conciertoMoveDrag, {
+            edgeResistance:0.5,
+            bounds: conciertoDrag,
+            type: "x", 
+            inertia: true
+        })
+    }
 
     const initSlider = (idBox) => {
 
@@ -287,10 +304,11 @@ export default function Detalle() {
                                 </div>
                                 <div className={styles.boxAccordion} id="experienciasAccordion">
 
+                                    <div className={`iconRombo claro ${styles.pos1}`}></div>
+                                    <div className={`iconRombo claro small ${styles.pos2}`}></div>
 
 
                                     <div className="accordion">
-
 
                                         <div className="panel closed">
                                             <div className="panel-header">
@@ -383,108 +401,17 @@ export default function Detalle() {
                                 <div className="hideMe">
                                     <div id="masterWrap" className='masterWrap'>
                                         <div id="panelWrap" className='panelWrap'>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto1.png" width = '276' height = '276' alt='Bareto' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>bareto</h3>
-                                                            <p>06:00 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto2.png" width = '276' height = '276' alt='la mosca tse-tse' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>la mosca tse-tse</h3>
-                                                            <p>07:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto3.png" width = '276' height = '276' alt='miguel samame' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>miguel samame</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto4.png" width = '276' height = '276' alt='Rio' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>rio</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto5.png" width = '276' height = '276' alt='gin tonic' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>gin tonic</h3>
-                                                            <p>06:45 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto6.png" width = '276' height = '276' alt='DJ Giorgio' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>DJ Giorgio</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto7.png" width = '276' height = '276' alt='DJ luigi' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>DJ luigi</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto8.png" width = '276' height = '276' alt='PSV' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>PSV</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                            <section>
-                                                <div className={styles.sombraRombo}>
-                                                    <div className={styles.boxConciertoSlider}>
-                                                        <Image src="/assets/bareto9.png" width = '276' height = '276' alt='we the lion' />
-                                                        <div className={styles.conciertoContent}>
-                                                            <h3>we the lion</h3>
-                                                            <p>08:25 PM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
+                                            <SectionConcierto />
                                         </div>
                                     </div>
                                     <div className="dots">
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles.conciertoDrag} id="conciertoDrag">
+                                <div className={styles.conciertoMoveDrag} id="conciertoMoveDrag">
+                                    <div className={styles.lineConcierto}>
+                                        <SectionConcierto2 />
                                     </div>
                                 </div>
                             </div>

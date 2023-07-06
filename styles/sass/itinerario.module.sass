@@ -11,6 +11,8 @@
             border: 0px solid red
             height: 500px
             position: relative
+            @media screen and (min-width: 992px)
+                display: none
             .posRombo
                 bottom: 6rem
                 left: 2.5rem
@@ -20,77 +22,131 @@
             .posRombo3
                 bottom: -2rem
                 right: 2.5rem
-            section
-                height: 457px
-                .sombraRombo
-                    width: 276px
-                    height: 276px
-                    // overflow: hidden
-                    border: 0px solid red
-                    position: relative
-                    transform: rotate(-45deg)
-                    &:after
-                        content: ''
-                        width: 100%
-                        height: 100%
-                        border: 5px solid $doradoClaro
-                        position: absolute
-                        top: 0.35rem
-                        left: -0.35rem
-                        z-index: 1
-                .boxConciertoSlider
+        section
+            height: 457px
+            .sombraRombo
+                width: 276px
+                height: 276px
+                // overflow: hidden
+                border: 0px solid red
+                position: relative
+                transform: rotate(-45deg)
+                &:after
+                    content: ''
                     width: 100%
                     height: 100%
-                    overflow: hidden
-                    border: 0px solid red
-                    position: relative
-                    // transform: rotate(-45deg)
-                    z-index: 2
-                    &:before
-                        content: ''
-                        width: 100%
-                        height: 100%
-                        background: rgb(0,0,0)
-                        background: linear-gradient(50deg, rgb(0, 0, 0) 5%, rgba(255, 255, 255, 0) 100%)
-                        position: absolute
-                        top: 0
-                        left: 0
-                        z-index: 3
-                    img
-                        width: 276px
-                        height: 276px
-                        object-fit: cover
-                        transform: rotate(45deg)
-                        scale: 1.55
-                        object-position: 0px 12px
-                    .conciertoContent
-                        position: absolute
-                        bottom: 2.5rem
-                        left: 27%
-                        transform: translateX(-50%) rotate(45deg)
-                        z-index: 5
-                        h3
-                            font-family: $RodfatTwo
-                            font-size: 32px
-                            line-height: 1em
-                            margin: 0
-                            color: white
-                            text-align: center
-                            text-transform: uppercase
-                        p
-                            font-family: $norpethDemiBold
-                            font-size: 22px
-                            line-height: 1em
-                            margin: 0
-                            color: white
-                            text-align: center
-                            text-transform: uppercase
+                    border: 5px solid $doradoClaro
+                    position: absolute
+                    top: 0.35rem
+                    left: -0.35rem
+                    z-index: 1
+            .boxConciertoSlider
+                width: 100%
+                height: 100%
+                overflow: hidden
+                border: 0px solid red
+                position: relative
+                // transform: rotate(-45deg)
+                z-index: 2
+                &:before
+                    content: ''
+                    width: 100%
+                    height: 100%
+                    background: rgb(0,0,0)
+                    background: linear-gradient(50deg, rgb(0, 0, 0) 5%, rgba(255, 255, 255, 0) 50%)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: 3
+                img
+                    width: 276px
+                    height: 276px
+                    object-fit: cover
+                    transform: rotate(45deg)
+                    scale: 1.55
+                    object-position: 0px 12px
+                .conciertoContent
+                    position: absolute
+                    bottom: 2.5rem
+                    left: 27%
+                    transform: translateX(-50%) rotate(45deg)
+                    z-index: 5
+                    h3
+                        font-family: $RodfatTwo
+                        font-size: 32px
+                        line-height: 1em
+                        margin: 0
+                        color: white
+                        text-align: center
+                        text-transform: uppercase
+                    p
+                        font-family: $norpethDemiBold
+                        font-size: 22px
+                        line-height: 1em
+                        margin: 0
+                        color: white
+                        text-align: center
+                        text-transform: uppercase
 
         .boxExperiencia, .boxConcierto
             margin: 0 auto 0
             text-align: center
+        .boxExperiencia
+            .boxAccordion
+                position: relative
+                @media screen and (min-width: 992px)
+                    width: 610px
+                    margin: auto
+                    text-align: center
+                .pos1
+                    left: -6rem
+                    top: 2rem
+                .pos2
+                    right: -10rem
+                    bottom: 3rem
         .boxConcierto 
             margin-top: 3.5rem
+            .conciertoDrag
+                border: 0px solid red
+                display: none
+                height: 590px
+                position: relative
+                z-index: 12
+                @media screen and (min-width: 992px)
+                    display: block
+                
+                .conciertoMoveDrag
+                    position: absolute
+                    .lineConcierto
+                        display: flex
+                        justify-content: flex-start
+                        justify-items: flex-start
+                        gap: 5rem
+                        padding: 8rem 0 0 5rem
+                        section
+                            position: relative
+                            &:nth-of-type(2n+1)
+                                .posConciertoPC1
+                                    bottom: 7rem
+                                    left: 5rem
+                                .posConciertoPC2
+                                    top: 4rem
+                                    right: -5.5rem
+                            &:nth-of-type(2n)
+                                top: 3rem
+                                .posConciertoPC1
+                                    bottom: 8rem
+                                    left: 4rem
+                                .posConciertoPC2
+                                    top: -5rem
+                                    right: -9.95rem
+                                    transform: scale(.5) rotate(45deg)
+                            .sombraRombo
+                                &::after
+                                    top: 0
+                                    left: 0
+                                    transform: scale(1.02)
+                                
         .boxTitle
             display: inline-block
             border: 0px solid red
@@ -129,6 +185,8 @@
         display: flex
         justify-content: center
         margin-top: .75rem
+        @media screen and (min-width: 992px)
+            margin-top: 1.5rem
         .navTabs
             width: 374px
             height: 63px
@@ -181,3 +239,5 @@
             line-height: 1.15em
             color: $doradoClaro
             text-align: center
+            @media screen and (min-width: 992px)
+                font-size: 22px

@@ -19,11 +19,15 @@
         bottom: 1rem
         left: 0
         width: 100%
+        text-align: center
+        padding: 0 .5rem
         img
-            width: 380px
-            height: 20px
+            width: 100%
+            height: 29px
             aspect-ratio: 1 / 1
-            object-fit: cover
+            object-fit: contain
+            margin: 0 auto
+            text-align: center
     .boxContent
         position: relative
         z-index: 100
@@ -64,6 +68,8 @@
                     font-size: 42px
                     line-height: 1.5em
                     text-align: center
+                    @media screen and (min-width: 992px)
+                        width: 56px
                     &:focus
                         border: 1px solid $dorado
                         outline: none
@@ -80,6 +86,9 @@
             justify-content: center
             align-items: flex-start
             margin-top: 1.5rem
+            @media screen and (min-width: 992px)
+                margin-top: 2.5rem
+
             img
                 width: 180px
                 height: 37px

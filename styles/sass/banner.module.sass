@@ -3,6 +3,25 @@
 @import 'vars/fonts'
 
 
+.cabeceraLogoRestaurante
+    width: 140px
+    height: 82px
+    border: 0px solid red
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    flex-wrap: wrap
+    @media screen and (min-width: 992px)
+        width: 262px
+        height: 152px
+    img
+        width: 100%
+        height: auto
+        object-fit: contain
+        aspect-ratio: 1 / 1
+
+
 .posRombo
     margin-top: -9.75rem
 .iconsRombo
@@ -11,15 +30,31 @@
     z-index: 35
     .pos1
         bottom: 4rem
+        top: auto
         left: 2rem
         z-index: 3
+        @media screen and (min-width: 992px)
+            bottom: auto
+            top: 4rem
+            left: -7rem
     .pos2
         bottom: -.5em
         right: 1.75rem
         z-index: 3
+        @media screen and (min-width: 992px)
+            bottom: 4.5em
+            right: -9.25rem
 .boxBanner, .boxBanner2
     position: relative
     margin: 3rem 0 0 0
+    height: 493px
+    display: block
+    @media screen and (min-width: 390px)
+        height: 478px
+    @media screen and (min-width: 412px)
+        height: 455px
+    @media screen and (min-width: 992px)
+        display: none
     .boxImgLogo
         display: flex
         justify-content: center
@@ -50,8 +85,8 @@
         left: -6rem
         z-index: 21
         @media screen and (min-width: 360px)
-            bottom: -7.16rem
-            left: -6.5rem
+            bottom: -7.6rem
+            left: -6.25rem
         @media screen and (min-width: 375px)
             bottom: -7.9rem
             left: -5.5rem
@@ -64,6 +99,8 @@
         @media screen and (min-width: 414px)
             bottom: -8.9rem
             left: -6rem
+        
+    
     .triangulo2
         position: absolute
         bottom: -8.9rem
@@ -71,8 +108,8 @@
         right: -6rem
         z-index: 21
         @media screen and (min-width: 360px)
-            bottom: -7.16rem
-            right: -7.5rem
+            bottom: -7.5rem
+            right: -6.5rem
         @media screen and (min-width: 375px)
             bottom: -7.9rem
             right: -5.5rem
@@ -85,30 +122,61 @@
         @media screen and (min-width: 414px)
             bottom: -8.9rem
             right: -6rem
+        
+        
     .banner
         object-fit: cover
         width: 100% 
-        height: 412px
+        height: 453px
         aspect-ratio: 1 / 1
         position: relative
         z-index: 20
-        object-position: 0 -38px
+        object-position: center
         @media screen and (min-width: 430px)
-            height: 429px
-        // @media screen and (min-width: 375px)
-        //     object-position: 0px -28px
-        // @media screen and (min-width: 390px)
-        //     object-position: 0px -39px
-        // @media screen and (min-width: 412px)
-        //     object-position: 0px -66px
-        //     transform: scale(1.05)
-        // @media screen and (min-width: 740px)
-        //     object-position: 0px -38px
-        //     transform: scale(1)
+            height: 474px
+      
 
 
 .boxBanner2
     margin: 0rem 0 0 0
+    height: 474px
+    @media screen and (min-width: 412px)
+        height: 455px
+    
+.boxCabeceraPC
+    width: 100%
+    height: 620px
+    position: relative
+    border: 0px solid red
+    display: none
+    @media screen and (min-width: 992px)
+        display: block
+        height: 420px
+    @media screen and (min-width: 1200px)
+        height: 450px
+    @media screen and (min-width: 1400px)
+        height: 550px
+    &.large
+        margin: 5rem 0 0 0
+        @media screen and (min-width: 992px)
+            height: 490px
+        @media screen and (min-width: 1200px)
+            height: 560px
+        @media screen and (min-width: 1400px)
+            height: 580px
+        @media screen and (min-width: 1500px)
+            height: 650px
+    .boxImgLogo
+        position: absolute
+        bottom: 0rem
+        left: 50%
+        transform: translateX(-50%)
+        @media screen and (min-width: 1200px)
+            bottom: -1rem
     .banner
-        object-position: 0 -38px
+        width: 100%
+        height: 100%
+        aspect-ratio: 1 / 1
+        object-fit: cover
+        object-position: center
         

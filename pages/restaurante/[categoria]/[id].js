@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
 import Layout from '../../../components/layout'
-import BannerPrincial from '../../../components/itinerario/banner'
+import BannerPrincial from '../../../components/restaurantes/bannerrestaurante'
 import Cabecera from '../../../components/help/cabecerares'
 import Plato from '../../../components/help/plato'
 
@@ -19,19 +19,18 @@ export default function Restaurante() {
                     title={'#nombre# :: Cusqueña, Maestros del Sabor'}
                     description={'#nombre# :: Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['lista de <br>restaurantes','iconorestaurante.svg', '48', '42','','Descubre los sabores que nos acompañan.'] } />
+                    <BannerPrincial data={ ['primos.svg', 'Primos'] } />
                     <div className={styles.restauranteContendorDetalle}>
                         <div className='container'>
-                            <div className={styles.detalleRestaurante}>
-                                <Cabecera data={ ['primos.svg','/restaurante/primos','Carnes'] } />
-                            </div>
-                            <div className={styles.boxPlato}>
-                                <h2>Clásico Fried <br />Chicken Sandwich</h2>
-                                <Plato data={ ['custrigo.png','24.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
-                            </div>
-                            <div className={styles.boxPlato}>
-                                <h2>pollo a la brasa<br /> primos</h2>
-                                <Plato data={ ['cusroja.png','59.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
+                            <div className={styles.gridRestaurante}>
+                                <div className={styles.boxPlato}>
+                                    <h2>Clásico Fried <br />Chicken Sandwich</h2>
+                                    <Plato data={ ['custrigo2.png','24.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
+                                </div>
+                                <div className={styles.boxPlato}>
+                                    <h2>pollo a la brasa<br /> primos</h2>
+                                    <Plato data={ ['cusmalta.png','59.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
+                                </div>
                             </div>
                         </div>
                     </div>

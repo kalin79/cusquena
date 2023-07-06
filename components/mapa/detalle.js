@@ -23,7 +23,7 @@ export default function Detalle() {
         let navDrag = Draggable.create(mapaDrag, {
             edgeResistance:0.5,
             bounds: bgMapa,
-            type: "x", 
+            type: "x,y", 
             inertia: true
         })
     }
@@ -34,13 +34,17 @@ export default function Detalle() {
                 <div className={styles.containerInfo}>
                     <div className='container'>
                         <div className={styles.boxTitle}>
-                            <h1>parque <br />de las aguas</h1>
+                            <h1>parque de las aguas</h1>
                             <div className={styles.rombito}></div>
                             <div className={`${styles.rombito} ${styles.pos2}`}></div>
                         </div>
+                        <div className={styles.subBoxTitle}>
+                            <Image src="/assets/mano.png"  width={32} height={48} alt='Arrastre el mapa para ver más lugares'  />
+                            <h2>Arrastre el mapa para ver más lugares</h2>
+                        </div>
                         <div className={styles.bgMapa} id="bgMapa">
                             <div className={styles.mapaDrag} id="mapaDrag">
-                                <Image src="/assets/mapamovil.png"  width={1224} height={689} alt='Parque de las Aguas'  />
+                                <Image src="/assets/mapafinal.png"  width={1800} height={1013} alt='Parque de las Aguas'  />
                             </div>
                         </div>
                         <div className={styles.boxPing}>

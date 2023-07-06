@@ -6,10 +6,16 @@ body
      background: url('/assets/bg.png')
      background-repeat: repeat
      background-position: center 
-     // background-size: contain
      @media screen and (min-width: 992px)
-          background: url('/assets/bgintro2.png')
-
+          // background: url('/assets/bgintro2.png')
+          background: url('/assets/bg3.png')
+          background-size: cover
+header
+     nav
+          a
+               &.active
+                    span
+                         color: rgba($dorado,1) !important
 .contentPlato
      display: flex
      justify-content: flex-start
@@ -41,9 +47,17 @@ body
                &.pos1
                     right: 1rem
                     top: 3rem
+                    bottom: auto
+                    @media screen and (min-width: 992px)
+                         bottom: 7rem
+                         top: auto
                &.pos2
                     left: 1rem
                     bottom: 7rem
+                    top: auto
+                    @media screen and (min-width: 992px)
+                         bottom: auto
+                         top: 7rem
      .boxPrecio
           width: 155px
           height: 62px
@@ -213,6 +227,7 @@ body
      position: relative
      width: 358px
      height: 358px
+     
      &.small
           width: 264px
           height: 264px
@@ -248,6 +263,7 @@ body
                width: 175px
           h4
                text-transform: none
+               
           &.flotante
                display: flex
                justify-content: center
@@ -266,48 +282,70 @@ body
                     left: 50%
                     transform: translateX(-50%)
                     width: 115px
-          p
-               font-family: $RodfatTwo
-               font-size: 14px
-               line-height: 1.15em
-               color: $grisOscuro
-               text-align: center
+          .boxPcontainer
                position: relative
-               padding: 0 1.5rem
-               display: inline-block
-               &.small
+               border: 0px solid red
+          p
+               &.botonRestaurante
+                    // font-family: $RodfatTwo
+                    // font-size: 14px
+                    // line-height: 1.15em
+                    // color: $grisOscuro
+                    // text-align: center
+                    // position: relative
+                    // padding: 0 1.5rem
+                    // display: inline-block
+                    width: 116px
+                    height: 32px
+                    background: $grisOscuro
+                    font-family: $norpethDemiBold
                     font-size: 12px
-                    padding: 0 1rem
+                    line-height: 2.75em
+                    color: $doradoClaro
+                    text-align: center
+                    text-transform: uppercase
+                    margin: 0
+                    border-radius: 10px
+                    bottom: 3.5rem
+                    @media screen and (min-width: 992px)
+                         bottom: 5.5rem
+                    &.big
+                         width: 148px
+                         height: 42px
+                         line-height: 1.15em
+                         padding: .45rem 0 0
+                         box-sizing: border-box
+                    // &.small
+                    //      font-size: 12px
+                    //      padding: 0 1rem
+                    //      &::before
+                    //           top: 30%
+                    //      &::after
+                    //           top: 30%
                     &::before
-                         top: 30%
+                         content: ''
+                         background: $doradoClaro
+                         width: 10px
+                         height: 10px
+                         position: absolute
+                         right: -0.25rem
+                         top: 50%
+                         transform: translateY(-50%) rotate(45deg)
                     &::after
-                         top: 30%
-               &::before
-                    content: ''
-                    background: url('/assets/arrowright.png')
-                    background-size: cover
-                    background-repeat: no-repeat
-                    width: 14px
-                    height: 22px
-                    position: absolute
-                    right: 0
-                    top: 50%
-                    transform: translateY(-50%)
-               &::after
-                    content: ''
-                    background: url('/assets/arrowleft.png')
-                    background-size: cover
-                    background-repeat: no-repeat
-                    width: 14px
-                    height: 22px
-                    position: absolute
-                    left: 0
-                    top: 50%
-                    transform: translateY(-50%)
+                         content: ''
+                         background: $doradoClaro
+                         width: 10px
+                         height: 10px
+                         position: absolute
+                         left: -0.25rem
+                         top: 50%
+                         transform: translateY(-50%) rotate(45deg)
           .boxInfo
-               text-align: center
-               
-               
+               display: flex
+               flex-direction: column
+               justify-content: center
+               align-items: center
+               flex-wrap: wrap
                h2
                     font-family: $RodfatTwo
                     font-size: 22px
@@ -316,7 +354,7 @@ body
                     text-align: center
                     margin-top: .85rem
                     text-transform: uppercase
-               
+                    
                .boxIcon
                     display: flex
                     justify-content: center
@@ -324,6 +362,8 @@ body
                     img
                          aspect-ratio: 1 / 1
                          object-fit: cover
+                        
+                         
      .romboSecundario
           width: 340px
           height: 340px
@@ -334,6 +374,35 @@ body
           top: 2rem
           left: .5rem
           z-index: 2
+
+     &.romboBannerCabecera
+          @media screen and (min-width: 992px)
+               width: 480px
+               height: 480px
+          h4
+               @media screen and (min-width: 992px)
+                    font-size: 20px
+                    width: 272px
+          .boxIcon
+               img
+                    @media screen and (min-width: 992px)
+                         width: 72px
+                         height: 78px
+               &.iconRestaurante
+                    img
+                         @media screen and (min-width: 992px)
+                              width: 72px
+                              height: 63px 
+               &.iconMapa
+                    img
+                         @media screen and (min-width: 992px)
+                              width: 70px
+                              height: 59px 
+          .boxInfo
+               h2
+                    @media screen and (min-width: 992px)
+                         font-size: 32px
+                         line-height: 1em
 
 
 .buttonStyle
