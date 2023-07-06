@@ -21,7 +21,7 @@ export default function Layout({children,title='',description=''}) {
 
                     <meta name="robots" content="index,follow"/>
                     {/* <meta
-                         http-equiv="Content-Security-Policy"
+                         http-equiv="Content-Security-Policy" 
                          content="default-src 'self'; img-src https://*; child-src 'none';" 
                     /> */}
                </Head>
