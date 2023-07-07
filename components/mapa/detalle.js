@@ -44,73 +44,45 @@ export default function Detalle() {
                         </div>
                         <div className={styles.bgMapa} id="bgMapa">
                             <div className={styles.mapaDrag} id="mapaDrag">
-                                <Image src="/assets/mapafinal2.png"  width={1800} height={1013} alt='Parque de las Aguas'  />
+                                <Image src="/assets/mapafinal3.png"  width={1500} height={1160} alt='Parque de las Aguas'  />
                             </div>
                         </div>
                         <div className={styles.boxPing}>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>1</div>
-                                <p>Portico</p>
+                                <p>Pórtico de Ingreso</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>2</div>
-                                <p>Caja Recarga</p>
+                                <p>Zona de Recarga</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>3</div>
-                                <p>Volumétrico Maestros</p>
+                                <p>Masterclass</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>4</div>
-                                <p>Zona Picnic (cojines)</p>
+                                <p>Zona de descanso</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>5</div>
-                                <p>Torre Informativa</p>
+                                <p>Zona de postres</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>6</div>
-                                <p>Zona Clase Maestra/Cata</p>
+                                <p>Zona de emprendedores</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>7</div>
-                                <p>Zona Niños</p>
+                                <p>Cata y Maridaje</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>8</div>
-                                <p>Kioskos Postres</p>
+                                <p>Zona Gastronómica</p>
                             </div>
                             <div className={styles.listPing}>
                                 <div className={styles.circle}>9</div>
-                                <p>VIP Cusqueña</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>10</div>
-                                <p>Zona Emprendedores</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>11</div>
-                                <p>Bancas Picnic</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>12</div>
-                                <p>Toldo Comida</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>13</div>
-                                <p>Kioskos Comida</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>14</div>
                                 <p>Escenario</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>15</div>
-                                <p>Zona VIP</p>
-                            </div>
-                            <div className={styles.listPing}>
-                                <div className={styles.circle}>16</div>
-                                <p>Zona Licores</p>
                             </div>
                         </div>
                     </div>
