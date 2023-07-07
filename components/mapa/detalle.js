@@ -44,7 +44,7 @@ export default function Detalle() {
                         </div>
                         <div className={styles.bgMapa} id="bgMapa">
                             <div className={styles.mapaDrag} id="mapaDrag">
-                                <Image src="/assets/mapafinal.png"  width={1800} height={1013} alt='Parque de las Aguas'  />
+                                <Image src="/assets/mapafinal2.png"  width={1800} height={1013} alt='Parque de las Aguas'  />
                             </div>
                         </div>
                         <div className={styles.boxPing}>

@@ -16,6 +16,7 @@ header
                &.active
                     span
                          color: rgba($dorado,1) !important
+
 .contentPlato
      display: flex
      justify-content: flex-start
@@ -95,11 +96,20 @@ header
                text-transform: uppercase
                margin: 0
           // img
-
+.tabSlider
+     position: absolute
+     width: 100%
+     &.tabSlider0, 
+     &.tabSlider1
+          opacity: 0
+          top: 3rem
+          left: 50%
+          transform: translateX(-50%)
 .containerSliders
      border: 0px solid red
      height: 400px
      position: relative
+     
      .hideMe
           opacity: 0
      .masterWrap
@@ -122,7 +132,8 @@ header
           position: relative
           float: left
 
-     .dot
+     .dot,
+     .dot2
           width: 12px
           height: 12px
           border-radius: 100%
@@ -132,7 +143,8 @@ header
           cursor: pointer
           float: left
 
-     .dots
+     .dots,
+     .dots2
           position: absolute
           z-index: 100
           left: 50%
@@ -149,16 +161,23 @@ header
      right: 12px
 .accordion
      border: 0px solid red
-     display: flex
-     justify-content: center
-     align-items: center
-     flex-wrap: wrap
-     flex-direction: column
-     gap: 1rem
+     
+     width: 100%
+     .tabAccordion1,
+     .tabAccordion2
+          display: none
+          width: 100%
+          // display: flex
+          justify-content: center
+          align-items: center
+          flex-wrap: wrap
+          flex-direction: column
+          gap: 1rem
      .panel
           overflow: hidden
           border: 1px solid $dorado
           border-radius: 5px
+          width: 100%
           .panel-header
                cursor: pointer
                border-radius: 5px

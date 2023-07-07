@@ -2,21 +2,23 @@ import Image from 'next/image'
 
 import styles from  '../../styles/sass/itinerario.module.sass'
 
-export default function Concierto() {
+export default function Concierto({items}) {
+    // console.log(items)
+    const {horario, image_pc, imagemobile, id, titulo } = items
     return (
         <>
             <section>
                 <div className={styles.sombraRombo}>
                     <div className={styles.boxConciertoSlider}>
-                        <Image src="/assets/baretoalta.png" width = '1400' height = '1415' alt='Bareto' />
+                        <Image src={image_pc} width = '1400' height = '1415' alt={titulo} />
                         <div className={styles.conciertoContent}>
-                            <h3>bareto</h3>
-                            <p>06:00 PM</p>
+                            <h3>{titulo}</h3>
+                            <p>{horario}</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
+            {/* <section>
                 <div className={styles.sombraRombo}>
                     <div className={styles.boxConciertoSlider}>
                         <Image src="/assets/bareto2.png" width = '276' height = '276' alt='la mosca tse-tse' />
@@ -103,7 +105,7 @@ export default function Concierto() {
                         </div>
                     </div>
                 </div>
-            </section>   
+            </section>    */}
         </>
     )
 }

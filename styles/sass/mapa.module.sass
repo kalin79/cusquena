@@ -67,10 +67,15 @@
                 left: 50%
                 transform: translateX(-50%) !important
             img
-                width: 1224px
-                height: 689px
+                // width: 1224px
+                // height: 689px
+                width: 1500px
+                height: 1380px
                 aspect-ratio: 1 / 1
                 object-fit: contain
+                @media screen and (min-width: 992px)
+                    width: 900px
+                    height: 700px
     .containerInfo
         margin: 6rem auto 0
         text-align: center
