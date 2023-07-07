@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 import Layout from '../../../components/layout'
 import BannerPrincial from '../../../components/restaurantes/bannerrestaurante'
-import Cabecera from '../../../components/help/cabecerares'
+// import Cabecera from '../../../components/help/cabecerares'
 import Plato from '../../../components/help/plato'
 
 import styles from  '@/styles/sass/restaurantes.module.sass'
@@ -990,6 +990,64 @@ export default function Restaurante() {
         }
     ])
 
+    const [categorias, setCategorias] = useState([
+        {
+        "id": 3,
+        "titulo": "Chifa",
+        "icono": "https://back.mds-cusquena.com/images/categorias/3/3-icon-1688748082.svg"
+        },
+        {
+        "id": 4,
+        "titulo": "Contemporáneo",
+        "icono": "https://back.mds-cusquena.com/images/categorias/4/4-icon-1688748121.svg"
+        },
+        {
+        "id": 5,
+        "titulo": "Marina",
+        "icono": "https://back.mds-cusquena.com/images/categorias/5/5-icon-1688748141.svg"
+        },
+        {
+        "id": 6,
+        "titulo": "Hamburguesas",
+        "icono": "https://back.mds-cusquena.com/images/categorias/6/6-icon-1688748205.svg"
+        },
+        {
+        "id": 7,
+        "titulo": "Nikkei",
+        "icono": "https://back.mds-cusquena.com/images/categorias/7/7-icon-1688748221.svg"
+        },
+        {
+        "id": 8,
+        "titulo": "Pastas",
+        "icono": "https://back.mds-cusquena.com/images/categorias/8/8-icon-1688748235.svg"
+        },
+        {
+        "id": 9,
+        "titulo": "Pizzas",
+        "icono": "https://back.mds-cusquena.com/images/categorias/9/9-icon-1688748270.svg"
+        },
+        {
+        "id": 11,
+        "titulo": "Pollerías",
+        "icono": "https://back.mds-cusquena.com/images/categorias/11/11-icon-1688748306.svg"
+        },
+        {
+        "id": 12,
+        "titulo": "Regional",
+        "icono": "https://back.mds-cusquena.com/images/categorias/12/12-icon-1688748325.svg"
+        },
+        {
+        "id": 1,
+        "titulo": "Carnes",
+        "icono": "https://back.mds-cusquena.com/images/categorias/1/1-icon-1688748364.svg"
+        },
+        {
+        "id": 2,
+        "titulo": "Criollo",
+        "icono": "https://back.mds-cusquena.com/images/categorias/2/2-icon-1688748379.svg"
+        }
+    ])
+
     const [platoactivo, setPlatoactivo] = useState([])
     const [titleactivo, setTitleactivo] = useState('')
 
@@ -997,28 +1055,39 @@ export default function Restaurante() {
     useEffect( () => {
         if (!boolInit.current){
             boolInit.current = true
-            let idCategoria = 1
-            let nuevosPlatos
-            const idUrl = window.location.href.split('/').pop()
 
-            restaurantes.forEach((restaurante) => {
-                if (restaurante.platos){
-                    // console.log(restaurante.platos)
-                    nuevosPlatos = restaurante.platos.map((plato) =>{
-                        if (plato.id === parseInt(idUrl)){
-                            console.log(plato)
-                        }
-                    })
-                    // console.log(1)
-                }
-            })
-            // let nuevoTitulo = restaurantes.map((restaurante) => {
+            dataPlato()
 
-            // })
-            // setTitleactivo(nuevoTitulo)
            
         }
     },[]) 
+
+    const  dataPlato =  async function () {
+        let idCategoria = 0
+        let nuevosPlatos
+        let arrPlato = []
+        const idUrl = await window.location.href.split('/').pop()
+        let imgRestaurante
+        await restaurantes.forEach((restaurante) => {
+            imgRestaurante = restaurante.image_pc
+            if (restaurante.platos){
+                nuevosPlatos = restaurante.platos.map((plato) =>{
+                    if (plato.restaurante_id === parseInt(idUrl)){
+                        idCategoria = imgRestaurante
+                        arrPlato.push(plato)
+                        return plato
+                    }
+                })
+                // console.log(1)
+            }
+        })
+
+        // console.log(arrPlato)
+        // console.log(nuevosPlatos)
+        setTitleactivo(idCategoria)
+        setPlatoactivo(arrPlato)
+
+    }
 
 
     
@@ -1026,21 +1095,26 @@ export default function Restaurante() {
         <>
             <div className='overflowHidden'>
                 <Layout
-                    title={'#nombre# :: Cusqueña, Maestros del Sabor'}
-                    description={'#nombre# :: Cusqueña, Maestros del Sabor'}
+                    title={'Cusqueña, Maestros del Sabor'}
+                    description={'Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['primos.svg', 'Primos'] } />
+                    <BannerPrincial 
+                        data={ titleactivo } 
+                    />
                     <div className={styles.restauranteContendorDetalle}>
                         <div className='container'>
                             <div className={styles.gridRestaurante}>
-                                <div className={styles.boxPlato}>
-                                    <h2>Clásico Fried <br />Chicken Sandwich</h2>
-                                    <Plato data={ ['custrigo2.png','24.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
-                                </div>
-                                <div className={styles.boxPlato}>
+                                {platoactivo?.map((items,index) => (
+                                    <Plato 
+                                        key={index}
+                                        data={items } 
+                                    />
+                                ))}
+                                
+                                {/* <div className={styles.boxPlato}>
                                     <h2>pollo a la brasa<br /> primos</h2>
                                     <Plato data={ ['cusmalta.png','59.99','MARIDA BIEN <br>CON CUSQUEÑA <br>DE TRIGO'] } />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

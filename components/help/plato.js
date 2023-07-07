@@ -1,26 +1,35 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import styles from  '@/styles/sass/restaurantes.module.sass'
 // import { gsap } from "gsap"
 export default function Plato({data}){
+    console.log(data.titulo)
     const createMarkup =  () => {
-        return {__html: data[2]}
+        return {__html: data.titulo}
+    }
+    const createMarkupTitulo =  () => {
+        return {__html: data.titulo}
     }
     return(
-        <div className='contentPlato' >
-            <div className='boxPrecio'>
-                <p>S/ {data[1]}</p>
-            </div>
-            <div className='boxBotella'>
-                <div className={`iconRombo claro pos1`}></div>
-                <div className={`iconRombo small claro pos2`}></div>
-                <div className={styles.boxBotella}>
-                    <Image src={`/assets/${data[0]}`} width='158' height='176' alt={`${data[2]}`}  />
+        <>
+            <div className={styles.boxPlato}>
+                <h2 dangerouslySetInnerHTML={ createMarkupTitulo() }></h2>
+                <div className='contentPlato' >
+                    <div className='boxPrecio'>
+                        <p>S/ {data.precio}</p>
+                    </div>
+                    <div className='boxBotella'>
+                        <div className={`iconRombo claro pos1`}></div>
+                        <div className={`iconRombo small claro pos2`}></div>
+                        <div className={styles.boxBotella}>
+                            <img src={data.imagen_pc} width='158' height='176' alt={data.titulo}  />
+                        </div>
+                        <h3 dangerouslySetInnerHTML={ createMarkup() }></h3>
+                        <div className={`linesSeparateRes ${styles.linesSeparateRes}`}>
+                            <img src="/assets/separate.png" width="300" height="12" alt='Bienvenidos al Festival Gastronómico'  />
+                        </div>
+                    </div>
                 </div>
-                <h3 dangerouslySetInnerHTML={ createMarkup() }></h3>
-                <div className={`linesSeparateRes ${styles.linesSeparateRes}`}>
-                    <Image src="/assets/separate.png" width="300" height="12" alt='Bienvenidos al Festival Gastronómico'  />
-                </div>
             </div>
-        </div>
+        </>
     )
 }
