@@ -2,7 +2,7 @@ import Layout from '../components/layout'
 import BannerPrincial from '../components/itinerario/banner'
 import Detalle from '../components/itinerario/detalle'
 
-export default function Itinerario(itinerarios){
+export default function Itinerario(){
     return (
         <div>
             <div className='overflowHidden'>
@@ -32,12 +32,12 @@ export default function Itinerario(itinerarios){
 //     }
 // }
 
-export async function getServerSideProps(){
-    const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
-    const {data: itinerarios } = await respuesta.json()
-    return {
-        props: {
-            itinerarios
-        }
-    }
-}
+// export async function getServerSideProps(){
+//     const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
+//     const {data: itinerarios } = await respuesta.json()
+//     return {
+//         props: {
+//             itinerarios
+//         }
+//     }
+// }
