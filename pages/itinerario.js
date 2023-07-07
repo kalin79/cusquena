@@ -11,9 +11,9 @@ export default function Itinerario(itinerarios){
                     description={'Itinerario :: Cusqueña, Maestros del Sabor'}
                 >
                     <BannerPrincial data={ ['Itinerario <br />del evento','ubicacion.svg', '40', '43','itinerario','Descubre los horarios de cada experiencia gastronómica, nuestras clases maestras y las mejores bandas nacionales e internacionales del festival.',''] } />
-                    <Detalle 
+                    {/* <Detalle 
                         itinerarios={itinerarios.itinerarios.eventos}
-                    />
+                    /> */}
                 
                 </Layout>
             </div>
