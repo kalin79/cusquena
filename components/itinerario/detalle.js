@@ -21,8 +21,64 @@ export default function Detalle({dataitinerarios}) {
     const tabActive = useRef(null)
     let boolInit = useRef(null)
 
-    const [listItinerario, setListItinerario] = useState([])
-    const [listItinerario2, setListItinerario2] = useState([])
+    const [listItinerario, setListItinerario] = useState([
+        {
+            "id": 1,
+            "titulo": "Cata y maridaje: Alejo Acuña",
+            "hora": "2:00 PM",
+            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            "horario": "2:00 PM – 3:00 PM 4:00 PM – 5:00 PM",
+            "zona": "",
+            "capacidad": ""
+        },
+        {
+            "id": 2,
+            "titulo": "Masterclass: James Berckemeyer",
+            "hora": "3:00 PM",
+            "descripcion": "Conoce los secretos culinarios de uno de los chefs más reconocidos del país. Anímate a preparar y vivir una experiencia a base de Leche de Tigre junto a James Berckemeyer, dueño y chef del restaurante Cosme.",
+            "horario": "3:00 PM – 4:00 PM",
+            "zona": "",
+            "capacidad": ""
+        },
+        {
+            "id": 4,
+            "titulo": "Masterclass: Javier Valdez",
+            "hora": "5:00 PM",
+            "descripcion": "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos crujientes enrollados de trucha, en costra de masa filo y perejil, acompañado de un risotto de zapallo loche al perfume de oliva. Siempre maridado con una Cusqueña bien heladita.",
+            "horario": "5:00 PM – 6:00 PM",
+            "zona": "",
+            "capacidad": ""
+        }
+    ])
+    const [listItinerario2, setListItinerario2] = useState([
+        {
+            id: 3,
+            titulo: "Masterclass: James Berckemeyer",
+            hora: "2:00 PM",
+            descripcion: "Conoce los secretos culinarios de uno de los chefs más reconocidos del país. Anímate a preparar y vivir una experiencia a base de Leche de Tigre junto a James Berckemeyer, dueño y chef del restaurante Cosme.",
+            horario: "2:00 PM - 3:00 PM",
+            zona: "",
+            capacidad: ""
+        },
+        {
+            id: 5,
+            titulo: "Cata y maridaje: Alejo Acuña",
+            hora: "3:00 PM",
+            descripcion: "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            horario: "3:00 PM -4:00 PM 5:00 PM - 6:00 PM",
+            zona: "",
+            capacidad: "40 personas"
+        },
+        {
+            id: 6,
+            titulo: "Masterclass: Javier Valdez",
+            hora: "4:00 PM",
+            descripcion: "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos escalopines de ternera, acompañada de un chutney de lúcuma y majadito de yuca al anís estrella. Siempre maridado con una Cusqueña bien heladita.",
+            horario: "4:00 PM - 5:00 PM",
+            zona: "",
+            capacidad: ""
+        },
+    ])
     const [listConcierto, setListConcierto] = useState([])
     const [listConcierto2, setListConcierto2] = useState([])
     const [listConcierto3, setListConcierto3] = useState([])
@@ -35,8 +91,6 @@ export default function Detalle({dataitinerarios}) {
         
         if (!boolInit.current){
             boolInit.current = true
-            setTimeout( () => {
-            console.log(dataitinerarios)
             // const nuevosItinerarios = itinerarios[1].experiencias
             // const nuevosItinerarios2 = itinerarios[0].experiencias
             // const nuevosConciertos = itinerarios[1].conciertos
@@ -50,23 +104,19 @@ export default function Detalle({dataitinerarios}) {
             // setListConcierto3(nuevosConciertos3)
             
             
-            // btnTab1.current.style.color = '#2D2A26'
-            // document.body.addEventListener("click", onClickTab)
+            btnTab1.current.style.color = '#2D2A26'
+            document.body.addEventListener("click", onClickTab)
             
-            // setTimeout(()=>{
-            //     initAccordion('tabAccordion1')
-            //     initAccordion('tabAccordion2')
-            //     actualizarItinerario(1,1)    
-            // },30)
-            // setTimeout(()=>{
-            //     initSlider('#sliderConcierto')
-            //     initSlider2('#sliderConcierto2')
-            // },1000)
-            // initConciertoPC()
-
-
-
-            },3000)
+            setTimeout(()=>{
+                initAccordion('tabAccordion1')
+                initAccordion('tabAccordion2')
+                actualizarItinerario(1,1)    
+            },30)
+            setTimeout(()=>{
+                initSlider('#sliderConcierto')
+                initSlider2('#sliderConcierto2')
+            },1000)
+            initConciertoPC()
 
             
         }
@@ -517,8 +567,8 @@ export default function Detalle({dataitinerarios}) {
         let tabAll = document.querySelectorAll(`.tabAccordion`)
         let tabSlider = document.querySelector(`.tabSlider${index}`)
         let tabSliderAll = document.querySelectorAll(`.tabSlider`)
-        const nuevosConciertos3 = itinerarios[index].conciertos
-        setListConcierto3(nuevosConciertos3)
+        // const nuevosConciertos3 = itinerarios[index].conciertos
+        // setListConcierto3(nuevosConciertos3)
         // console.log(`.tabAccordion${id}`)
         // console.log(tabActive.classList.contains("active"))
         if (tabActive.classList.contains("active")){
