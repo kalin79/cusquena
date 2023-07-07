@@ -15,7 +15,7 @@ import { Draggable } from "gsap/dist/Draggable"
 gsap.registerPlugin(Draggable)
 
 import styles from  '../../styles/sass/itinerario.module.sass'
-export default function Detalle({itinerarios}) {
+export default function Detalle({dataitinerarios}) {
     const btnTab1 = useRef(null)
     const btnTab2 = useRef(null)
     const tabActive = useRef(null)
@@ -34,35 +34,41 @@ export default function Detalle({itinerarios}) {
     useEffect( () => {
         
         if (!boolInit.current){
-
-            const nuevosItinerarios = itinerarios[1].experiencias
-            const nuevosItinerarios2 = itinerarios[0].experiencias
-            const nuevosConciertos = itinerarios[1].conciertos
-            const nuevosConciertos2 = itinerarios[0].conciertos
-            const nuevosConciertos3 = itinerarios[0].conciertos
-            // let tabSlider1 = document.querySelector('.tabSlider1')
-            // tabSlider1.style.display = 'block'
-            // console.log(itinerarios[0])
-            setListItinerario(nuevosItinerarios)
-            setListItinerario2(nuevosItinerarios2)
-            setListConcierto(nuevosConciertos)
-            setListConcierto2(nuevosConciertos2)
-            setListConcierto3(nuevosConciertos3)
-            
             boolInit.current = true
-            btnTab1.current.style.color = '#2D2A26'
-            document.body.addEventListener("click", onClickTab)
+            setTimeout( () => {
+            console.log(dataitinerarios)
+            // const nuevosItinerarios = itinerarios[1].experiencias
+            // const nuevosItinerarios2 = itinerarios[0].experiencias
+            // const nuevosConciertos = itinerarios[1].conciertos
+            // const nuevosConciertos2 = itinerarios[0].conciertos
+            // const nuevosConciertos3 = itinerarios[0].conciertos
+
+            // setListItinerario(nuevosItinerarios)
+            // setListItinerario2(nuevosItinerarios2)
+            // setListConcierto(nuevosConciertos)
+            // setListConcierto2(nuevosConciertos2)
+            // setListConcierto3(nuevosConciertos3)
             
-            setTimeout(()=>{
-                initAccordion('tabAccordion1')
-                initAccordion('tabAccordion2')
-                actualizarItinerario(1,1)    
-            },30)
-            setTimeout(()=>{
-                initSlider('#sliderConcierto')
-                initSlider2('#sliderConcierto2')
-            },1000)
-            initConciertoPC()
+            
+            // btnTab1.current.style.color = '#2D2A26'
+            // document.body.addEventListener("click", onClickTab)
+            
+            // setTimeout(()=>{
+            //     initAccordion('tabAccordion1')
+            //     initAccordion('tabAccordion2')
+            //     actualizarItinerario(1,1)    
+            // },30)
+            // setTimeout(()=>{
+            //     initSlider('#sliderConcierto')
+            //     initSlider2('#sliderConcierto2')
+            // },1000)
+            // initConciertoPC()
+
+
+
+            },3000)
+
+            
         }
     },[])
     
