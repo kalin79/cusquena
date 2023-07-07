@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState, useRef} from 'react'
 
 import Layout from '../components/layout'
@@ -32,11 +33,11 @@ export default function Itinerario(){
                     description={'Itinerario :: Cusqueña, Maestros del Sabor'}
                 >
                     <BannerPrincial data={ ['Itinerario <br />del evento','ubicacion.svg', '40', '43','itinerario','Descubre los horarios de cada experiencia gastronómica, nuestras clases maestras y las mejores bandas nacionales e internacionales del festival.',''] } />
-                    {/* {itinerarios?.map((items,index) => ( */}
+                    <ErrorBoundary fallback={<p>Something went wrong</p>}>
                         <Detalle
                             dataitinerarios={data}
                         />
-                    {/* ))} */}
+                    </ErrorBoundary>
                 </Layout>
             </div>
         </div>
@@ -65,3 +66,33 @@ export async function getServerSideProps(){
         }
     }
 }
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { hasError: false };
+    }
+  
+    static getDerivedStateFromError(error) {
+      // Update state so the next render will show the fallback UI.
+      return { hasError: true };
+    }
+  
+    componentDidCatch(error, info) {
+      // Example "componentStack":
+      //   in ComponentThatThrows (created by App)
+      //   in ErrorBoundary (created by App)
+      //   in div (created by App)
+      //   in App
+      logErrorToMyService(error, info.componentStack);
+    }
+  
+    render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return this.props.fallback;
+      }
+  
+      return this.props.children;
+    }
+  }
