@@ -15,7 +15,7 @@ import { Draggable } from "gsap/dist/Draggable"
 gsap.registerPlugin(Draggable)
 
 import styles from  '../../styles/sass/itinerario.module.sass'
-export default function Detalle({dataitinerarios}) {
+export default function Detalle() {
     const btnTab1 = useRef(null)
     const btnTab2 = useRef(null)
     const tabActive = useRef(null)
