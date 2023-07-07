@@ -3,6 +3,9 @@ import Image from 'next/image'
 export default function Panel({items}) {
     // console.log(items)
     const {capacidad, descripcion, hora, horario, id, titulo, zona } = items
+    const createMarkup =  () => {
+        return {__html: horario}
+    }
     return (
         <>
             <div className="panel closed">
@@ -16,7 +19,7 @@ export default function Panel({items}) {
                     <p>
                         {descripcion}
                     </p>
-                    <p>Horario: {horario}</p>
+                    <p dangerouslySetInnerHTML={ createMarkup() }></p>
                     <p>Zona: {zona}</p>
                     <p>Capacidad: {capacidad}</p>
                 </div>

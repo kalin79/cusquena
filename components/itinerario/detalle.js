@@ -27,7 +27,7 @@ export default function Detalle() {
             "titulo": "Cata y maridaje: Alejo Acuña",
             "hora": "2:00 PM",
             "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            "horario": "2:00 PM – 3:00 PM 4:00 PM – 5:00 PM",
+            "horario": "Horario: 2:00 PM – 3:00 <br> Horario: PM 4:00 PM – 5:00 PM",
             "zona": "",
             "capacidad": ""
         },
@@ -81,137 +81,151 @@ export default function Detalle() {
     ])
     const [listConcierto, setListConcierto] = useState([
         {
-            "id": 3,
-            "titulo": "GIN TONIC",
-            "horario": "6:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-desk-1688474121.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-mb-1688474121.png"
+        "id": 6,
+        "titulo": "WE THE LION",
+        "horario": "7:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688764071.png"
         },
         {
-            "id": 6,
-            "titulo": "WE THE LION",
-            "horario": "7:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688702659.png"
+        "id": 7,
+        "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
+        "horario": "9:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688764082.png"
         },
         {
-            "id": 7,
-            "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
-            "horario": "9:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688702731.png"
+        "id": 14,
+        "titulo": "DJ GIORGIO",
+        "horario": "A LO LARGO DEL FESTIVAL",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688764100.png"
         },
         {
-            "id": 14,
-            "titulo": "DJ GIORGIO",
-            "horario": "A LO LARGO DEL FESTIVAL",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688703444.png"
+        "id": 16,
+        "titulo": "GIN TONIC",
+        "horario": "6:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/16/16-desk-1688754008.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/16/16-mb-1688764130.png"
+        },
+        {
+        "id": 17,
+        "titulo": "PASABORDO",
+        "horario": "11:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/17/17-desk-1688764214.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/17/17-mb-1688764214.png"
         }
     ])
     const [listConcierto2, setListConcierto2] = useState([
         {
-            "id": 8,
-            "titulo": "MIGUEL SAMAMÉ",
-            "horario": "6:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688703103.png"
+        "id": 9,
+        "titulo": "BARETO",
+        "horario": "7:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688763907.png"
         },
         {
-            "id": 9,
-            "titulo": "BARETO",
-            "horario": "7:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688703186.png"
+        "id": 11,
+        "titulo": "LA MOSCA TSE TSE",
+        "horario": "10:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688763956.png"
         },
         {
-            "id": 11,
-            "titulo": "LA MOSCA TSE TSE",
-            "horario": "10:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688703270.png"
+        "id": 12,
+        "titulo": "GRUPO RIO",
+        "horario": "8:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688764003.png"
         },
         {
-            "id": 12,
-            "titulo": "GRUPO RIO",
-            "horario": "8:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688703340.png"
+        "id": 13,
+        "titulo": "DJ LUIGI",
+        "horario": "A LO LARGO DEL FESTIVAL",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688764030.png"
         },
         {
-            "id": 13,
-            "titulo": "DJ LUIGI",
-            "horario": "A LO LARGO DEL FESTIVAL",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688703380.png"
+        "id": 8,
+        "titulo": "MIGUEL SAMAMÉ",
+        "horario": "6:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688763886.png"
         }
     ])
     const [listConcierto3, setListConcierto3] = useState([
         {
-            "id": 3,
-            "titulo": "GIN TONIC",
-            "horario": "6:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-desk-1688474121.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-mb-1688474121.png"
+        "id": 6,
+        "titulo": "WE THE LION",
+        "horario": "7:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688764071.png"
         },
         {
-            "id": 6,
-            "titulo": "WE THE LION",
-            "horario": "7:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688702659.png"
+        "id": 7,
+        "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
+        "horario": "9:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688764082.png"
         },
         {
-            "id": 7,
-            "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
-            "horario": "9:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688702731.png"
+        "id": 14,
+        "titulo": "DJ GIORGIO",
+        "horario": "A LO LARGO DEL FESTIVAL",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688764100.png"
         },
         {
-            "id": 14,
-            "titulo": "DJ GIORGIO",
-            "horario": "A LO LARGO DEL FESTIVAL",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688703444.png"
+        "id": 16,
+        "titulo": "GIN TONIC",
+        "horario": "6:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/16/16-desk-1688754008.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/16/16-mb-1688764130.png"
+        },
+        {
+        "id": 17,
+        "titulo": "PASABORDO",
+        "horario": "11:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/17/17-desk-1688764214.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/17/17-mb-1688764214.png"
         }
     ])
 
     const [listConcierto4, setListConcierto4] = useState([
         {
-            "id": 8,
-            "titulo": "MIGUEL SAMAMÉ",
-            "horario": "6:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688703103.png"
+        "id": 9,
+        "titulo": "BARETO",
+        "horario": "7:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688763907.png"
         },
         {
-            "id": 9,
-            "titulo": "BARETO",
-            "horario": "7:00 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688703186.png"
+        "id": 11,
+        "titulo": "LA MOSCA TSE TSE",
+        "horario": "10:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688763956.png"
         },
         {
-            "id": 11,
-            "titulo": "LA MOSCA TSE TSE",
-            "horario": "10:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688703270.png"
+        "id": 12,
+        "titulo": "GRUPO RIO",
+        "horario": "8:30 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688764003.png"
         },
         {
-            "id": 12,
-            "titulo": "GRUPO RIO",
-            "horario": "8:30 PM",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688703340.png"
+        "id": 13,
+        "titulo": "DJ LUIGI",
+        "horario": "A LO LARGO DEL FESTIVAL",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688764030.png"
         },
         {
-            "id": 13,
-            "titulo": "DJ LUIGI",
-            "horario": "A LO LARGO DEL FESTIVAL",
-            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
-            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688703380.png"
+        "id": 8,
+        "titulo": "MIGUEL SAMAMÉ",
+        "horario": "6:00 PM",
+        "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
+        "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688763886.png"
         }
     ])
 

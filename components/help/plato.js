@@ -2,12 +2,12 @@
 import styles from  '@/styles/sass/restaurantes.module.sass'
 // import { gsap } from "gsap"
 export default function Plato({data}){
-    console.log(data.titulo)
+    console.log(data)
     const createMarkup =  () => {
-        return {__html: data.titulo}
+        return {__html: data.marinaje}
     }
     const createMarkupTitulo =  () => {
-        return {__html: data.titulo}
+        return {__html: data.descripcion}
     }
     return(
         <>
@@ -21,7 +21,7 @@ export default function Plato({data}){
                         <div className={`iconRombo claro pos1`}></div>
                         <div className={`iconRombo small claro pos2`}></div>
                         <div className={styles.boxBotella}>
-                            <img src={data.imagen_pc} width='158' height='176' alt={data.titulo}  />
+                            <img src={data.imagemobile} width='158' height='176' alt={data.titulo}  />
                         </div>
                         <h3 dangerouslySetInnerHTML={ createMarkup() }></h3>
                         <div className={`linesSeparateRes ${styles.linesSeparateRes}`}>

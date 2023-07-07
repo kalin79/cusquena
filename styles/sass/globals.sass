@@ -452,3 +452,58 @@ header
      &:focus
           border: 0px solid $dorado
           outline: none
+
+.centrarBotonGeneral
+     display: flex
+     justify-content: center
+     align-items: center
+     margin-top: 5rem
+.botonGeneral
+     width: 235px
+     height: 52px
+     background: $grisOscuro
+     font-family: $norpethDemiBold
+     font-size: 14px
+     line-height: 1.15em
+     color: $doradoClaro
+     text-align: center
+     text-transform: uppercase
+     margin: 0
+     border-radius: 10px
+     position: relative
+     border: 1px solid $doradoClaro
+     box-sizing: border-box
+     padding-top: .5rem
+     cursor: pointer
+     text-decoration: none
+     &.big
+          width: 148px
+          height: 42px
+          line-height: 1.15em
+          padding: .45rem 0 0
+          box-sizing: border-box
+     // &.small
+     //      font-size: 12px
+     //      padding: 0 1rem
+     //      &::before
+     //           top: 30%
+     //      &::after
+     //           top: 30%
+     &::before
+          content: ''
+          background: $doradoClaro
+          width: 10px
+          height: 10px
+          position: absolute
+          right: -0.25rem
+          top: 50%
+          transform: translateY(-50%) rotate(45deg)
+     &::after
+          content: ''
+          background: $doradoClaro
+          width: 10px
+          height: 10px
+          position: absolute
+          left: -0.25rem
+          top: 50%
+          transform: translateY(-50%) rotate(45deg)

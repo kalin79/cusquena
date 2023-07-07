@@ -5,12 +5,12 @@ import styles from  '../../styles/sass/restaurantes.module.sass'
 
 // import { gsap } from "gsap"
 export default function BtnMenu2({data,url}){
-    console.log(data)
+    // console.log(2,url)
     const router = useRouter()
     
     const handleClic = (slug) => {
         // console.log(slug)
-        router.push(`/${slug}`)
+        router.push(`/restaurante/platos/${slug}`)
     }
     return(
         <>
