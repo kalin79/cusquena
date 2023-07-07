@@ -10,7 +10,7 @@ const PreguntasFrecuentes = () => {
                     title={'Preguntas Frecuentes :: Cusqueña, Maestros del Sabor'}
                     description={'Preguntas Frecuentes :: Cusqueña, Maestros del Sabor'}
                 >
-                    <BannerPrincial data={ ['Preguntas <br>Frecuentes','iconpreguntas.svg', '90', '71','ppreguntas-frecuentes','Descubre los sabores que nos acompañarán en este Festival.',''] } />
+                    <BannerPrincial data={ ['Preguntas <br>Frecuentes','iconpreguntas.svg', '90', '71','ppreguntas-frecuentes','Descubre los sabores que nos acompañarán en este Festival.','iconpregunta'] } />
                     <Detalle />
                 </Layout>
             </div>
