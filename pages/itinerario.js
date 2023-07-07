@@ -33,11 +33,12 @@ export default function Itinerario(){
 // }
 
 export async function getServerSideProps(){
-    const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
-    const {data: itinerarios } = await respuesta.json()
-    return {
-        props: {
-            itinerarios
-        }
-    }
+    console.log(`${process.env.API_URL}/v1/eventos`)
+    // const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
+    // const {data: itinerarios } = await respuesta.json()
+    // return {
+    //     props: {
+    //         itinerarios
+    //     }
+    // }
 }
