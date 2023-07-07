@@ -32,12 +32,12 @@ export default function Itinerario(){
 //     }
 // }
 
-// export async function getServerSideProps(){
-//     const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
-//     const {data: itinerarios } = await respuesta.json()
-//     return {
-//         props: {
-//             itinerarios
-//         }
-//     }
-// }
+export async function getServerSideProps(){
+    const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
+    const {data: itinerarios } = await respuesta.json()
+    return {
+        props: {
+            itinerarios
+        }
+    }
+}
