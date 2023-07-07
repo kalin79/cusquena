@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import BannerPrincial from '../components/itinerario/banner'
 import Detalle from '../components/itinerario/detalle'
 
-export default function Itinerario(){
+export default function Itinerario(itinerarios){
 
     const [data, setData] = useState([])
     let boolInit = useRef(null)
@@ -35,7 +35,7 @@ export default function Itinerario(){
                     <BannerPrincial data={ ['Itinerario <br />del evento','ubicacion.svg', '40', '43','itinerario','Descubre los horarios de cada experiencia gastronómica, nuestras clases maestras y las mejores bandas nacionales e internacionales del festival.',''] } />
                     <ErrorBoundary fallback={<p>Something went wrong</p>}>
                         <Detalle
-                            dataitinerarios={data}
+                            dataitinerarios={itinerarios}
                         />
                     </ErrorBoundary>
                 </Layout>
