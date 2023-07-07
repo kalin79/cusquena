@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import styles from  '../../styles/sass/itinerario.module.sass'
 
@@ -12,7 +12,8 @@ export default function Concierto2({items}) {
                 <div className={`iconRombo claro  ${styles.posConciertoPC2}`}></div>
                 <div className={styles.sombraRombo}>
                     <div className={styles.boxConciertoSlider}>
-                        <Image src={image_pc} width = '1400' height = '1415' alt={titulo} />
+                        {/* <Image src={image_pc} width = '1400' height = '1415' alt={titulo} /> */}
+                        <img src={image_pc} width = '1400' height = '1415' alt={titulo} />
                         <div className={styles.conciertoContent}>
                             <h3>{titulo}</h3>
                             <p>{horario}</p>
