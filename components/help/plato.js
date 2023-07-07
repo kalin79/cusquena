@@ -4,7 +4,7 @@ import styles from  '@/styles/sass/restaurantes.module.sass'
 export default function Plato({data}){
     console.log(data)
     const createMarkup =  () => {
-        return {__html: data.marinaje}
+        return {__html: `MARIDA BIEN CON CUSQUEÑA<br> ${data.marinaje} `}
     }
     const createMarkupTitulo =  () => {
         return {__html: data.descripcion}
@@ -15,7 +15,7 @@ export default function Plato({data}){
                 <h2 dangerouslySetInnerHTML={ createMarkupTitulo() }></h2>
                 <div className='contentPlato' >
                     <div className='boxPrecio'>
-                        <p>S/ {data.precio}</p>
+                        <p>{data.precio}</p>
                     </div>
                     <div className='boxBotella'>
                         <div className={`iconRombo claro pos1`}></div>

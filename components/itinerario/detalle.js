@@ -25,59 +25,77 @@ export default function Detalle() {
         {
             "id": 1,
             "titulo": "Cata y maridaje: Alejo Acuña",
-            "hora": "2:00 PM",
+            "hora": "Horario: 2:00 PM",
             "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            "horario": "Horario: 2:00 PM – 3:00 <br> Horario: PM 4:00 PM – 5:00 PM",
-            "zona": "",
-            "capacidad": ""
+            "horario": "2:00 PM – 3:00 PM",
+            "zona": "Cata y maridaje:",
+            "capacidad": "40 personas"
         },
         {
             "id": 2,
             "titulo": "Masterclass: James Berckemeyer",
-            "hora": "3:00 PM",
+            "hora": "Horario: 3:00 PM",
             "descripcion": "Conoce los secretos culinarios de uno de los chefs más reconocidos del país. Anímate a preparar y vivir una experiencia a base de Leche de Tigre junto a James Berckemeyer, dueño y chef del restaurante Cosme.",
             "horario": "3:00 PM – 4:00 PM",
-            "zona": "",
-            "capacidad": ""
+            "zona": "Masterclass",
+            "capacidad": "40 personas"
+        },
+        {
+            "id": 8,
+            "titulo": "Cata y maridaje: Alejo Acuña",
+            "hora": "Horario: 4:00 PM",
+            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            "horario": "4:00 PM – 5:00 PM",
+            "zona": "Cata y maridaje",
+            "capacidad": "40 personas"
         },
         {
             "id": 4,
             "titulo": "Masterclass: Javier Valdez",
-            "hora": "5:00 PM",
+            "hora": "Horario: 5:00 PM",
             "descripcion": "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos crujientes enrollados de trucha, en costra de masa filo y perejil, acompañado de un risotto de zapallo loche al perfume de oliva. Siempre maridado con una Cusqueña bien heladita.",
             "horario": "5:00 PM – 6:00 PM",
-            "zona": "",
-            "capacidad": ""
+            "zona": "Masterclass",
+            "capacidad": "40 personas"
         }
     ])
     const [listItinerario2, setListItinerario2] = useState([
         {
-            id: 3,
-            titulo: "Masterclass: James Berckemeyer",
-            hora: "2:00 PM",
-            descripcion: "Conoce los secretos culinarios de uno de los chefs más reconocidos del país. Anímate a preparar y vivir una experiencia a base de Leche de Tigre junto a James Berckemeyer, dueño y chef del restaurante Cosme.",
-            horario: "2:00 PM - 3:00 PM",
-            zona: "",
-            capacidad: ""
+            "id": 5,
+            "titulo": "Cata y maridaje: Alejo Acuña",
+            "hora": "Horario: 3:00 PM",
+            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            "horario": "3:00 PM – 4:00 PM",
+            "zona": "Cata y maridaje",
+            "capacidad": "40 personas"
         },
         {
-            id: 5,
-            titulo: "Cata y maridaje: Alejo Acuña",
-            hora: "3:00 PM",
-            descripcion: "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            horario: "3:00 PM -4:00 PM / 5:00 PM - 6:00 PM",
-            zona: "",
-            capacidad: "40 personas"
+            "id": 3,
+            "titulo": "Masterclass: James Berckemeyer",
+            "hora": "Horario: 2:00 PM",
+            "descripcion": "Conoce los secretos culinarios de uno de los chefs más reconocidos del país. Anímate a preparar y vivir una experiencia a base de Leche de Tigre junto a James Berckemeyer, dueño y chef del restaurante Cosme.",
+            "horario": "2:00 PM – 3:00 PM",
+            "zona": "Masterclass",
+            "capacidad": "40 personas"
         },
         {
-            id: 6,
-            titulo: "Masterclass: Javier Valdez",
-            hora: "4:00 PM",
-            descripcion: "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos escalopines de ternera, acompañada de un chutney de lúcuma y majadito de yuca al anís estrella. Siempre maridado con una Cusqueña bien heladita.",
-            horario: "4:00 PM - 5:00 PM",
-            zona: "",
-            capacidad: ""
+            "id": 7,
+            "titulo": "Cata y maridaje: Alejo Acuña",
+            "hora": "Horario: 5:00 PM",
+            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            "horario": "5:00 PM – 6:00 PM",
+            "zona": "Cata y maridaje",
+            "capacidad": "40 personas"
         },
+        {
+            "id": 6,
+            "titulo": "Masterclass: Javier Valdez",
+            "hora": "Horario: 4:00 PM",
+            "descripcion": "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos escalopines de ternera, acompañada de un chutney de lúcuma y majadito de yuca al anís estrella. Siempre maridado con una Cusqueña bien heladita.",
+            "horario": "4:00 PM – 5:00 PM",
+            "zona": "Masterclass",
+            "capacidad": "40 personas"
+        }
     ])
     const [listConcierto, setListConcierto] = useState([
         {
