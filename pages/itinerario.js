@@ -33,7 +33,8 @@ export default function Itinerario(){
 // }
 
 export async function getServerSideProps(){
-    console.log(`${process.env.API_URL}/v1/eventos`)
+    console.log('ss')
+    // console.log(`${process.env.API_URL}/v1/eventos`)
     // const respuesta = await fetch(`${process.env.API_URL}/v1/eventos`)
     // const {data: itinerarios } = await respuesta.json()
     // return {
