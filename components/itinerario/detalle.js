@@ -65,7 +65,7 @@ export default function Detalle() {
             titulo: "Cata y maridaje: Alejo Acuña",
             hora: "3:00 PM",
             descripcion: "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            horario: "3:00 PM -4:00 PM 5:00 PM - 6:00 PM",
+            horario: "3:00 PM -4:00 PM / 5:00 PM - 6:00 PM",
             zona: "",
             capacidad: "40 personas"
         },
