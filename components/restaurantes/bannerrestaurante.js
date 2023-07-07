@@ -18,7 +18,7 @@ const Bannerrestaurante = ({data}) => {
             <div className={`${styles.boxCabeceraPC} ${styles.large}`}>
                 {/* <div className={`iconRombo claro small ${styles.pos1}`}></div>
                 <div className={`iconRombo claro ${styles.pos2}`}></div> */}
-                <img  src={data} className={styles.banner} width="1440" height="606" alt='Verificacion de edad' />
+                <img  src="/assets/cabeceraPC.png" className={styles.banner} width="1440" height="606" alt='Verificacion de edad' />
             </div>
             <div className={styles.iconsRombo}>
                 
