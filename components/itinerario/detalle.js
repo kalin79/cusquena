@@ -79,9 +79,141 @@ export default function Detalle() {
             capacidad: ""
         },
     ])
-    const [listConcierto, setListConcierto] = useState([])
-    const [listConcierto2, setListConcierto2] = useState([])
-    const [listConcierto3, setListConcierto3] = useState([])
+    const [listConcierto, setListConcierto] = useState([
+        {
+            "id": 3,
+            "titulo": "GIN TONIC",
+            "horario": "6:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-desk-1688474121.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-mb-1688474121.png"
+        },
+        {
+            "id": 6,
+            "titulo": "WE THE LION",
+            "horario": "7:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688702659.png"
+        },
+        {
+            "id": 7,
+            "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
+            "horario": "9:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688702731.png"
+        },
+        {
+            "id": 14,
+            "titulo": "DJ GIORGIO",
+            "horario": "A LO LARGO DEL FESTIVAL",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688703444.png"
+        }
+    ])
+    const [listConcierto2, setListConcierto2] = useState([
+        {
+            "id": 8,
+            "titulo": "MIGUEL SAMAMÉ",
+            "horario": "6:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688703103.png"
+        },
+        {
+            "id": 9,
+            "titulo": "BARETO",
+            "horario": "7:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688703186.png"
+        },
+        {
+            "id": 11,
+            "titulo": "LA MOSCA TSE TSE",
+            "horario": "10:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688703270.png"
+        },
+        {
+            "id": 12,
+            "titulo": "GRUPO RIO",
+            "horario": "8:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688703340.png"
+        },
+        {
+            "id": 13,
+            "titulo": "DJ LUIGI",
+            "horario": "A LO LARGO DEL FESTIVAL",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688703380.png"
+        }
+    ])
+    const [listConcierto3, setListConcierto3] = useState([
+        {
+            "id": 3,
+            "titulo": "GIN TONIC",
+            "horario": "6:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-desk-1688474121.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/3/3-mb-1688474121.png"
+        },
+        {
+            "id": 6,
+            "titulo": "WE THE LION",
+            "horario": "7:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-desk-1688702659.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/6/6-mb-1688702659.png"
+        },
+        {
+            "id": 7,
+            "titulo": "PEDRO SUAREZ VERTIZ - LA BANDA",
+            "horario": "9:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-desk-1688702731.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/7/7-mb-1688702731.png"
+        },
+        {
+            "id": 14,
+            "titulo": "DJ GIORGIO",
+            "horario": "A LO LARGO DEL FESTIVAL",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-desk-1688703444.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/1/concierto/14/14-mb-1688703444.png"
+        }
+    ])
+
+    const [listConcierto4, setListConcierto4] = useState([
+        {
+            "id": 8,
+            "titulo": "MIGUEL SAMAMÉ",
+            "horario": "6:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-desk-1688703103.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/8/8-mb-1688703103.png"
+        },
+        {
+            "id": 9,
+            "titulo": "BARETO",
+            "horario": "7:00 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-desk-1688703186.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/9/9-mb-1688703186.png"
+        },
+        {
+            "id": 11,
+            "titulo": "LA MOSCA TSE TSE",
+            "horario": "10:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-desk-1688703270.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/11/11-mb-1688703270.png"
+        },
+        {
+            "id": 12,
+            "titulo": "GRUPO RIO",
+            "horario": "8:30 PM",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-desk-1688703340.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/12/12-mb-1688703340.png"
+        },
+        {
+            "id": 13,
+            "titulo": "DJ LUIGI",
+            "horario": "A LO LARGO DEL FESTIVAL",
+            "image_pc": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-desk-1688703380.png",
+            "imagemobile": "https://back.mds-cusquena.com/images/evento/2/concierto/13/13-mb-1688703380.png"
+        }
+    ])
 
 
     // console.log(itinerarios[1].experiencias)
@@ -117,6 +249,7 @@ export default function Detalle() {
                 initSlider2('#sliderConcierto2')
             },1000)
             initConciertoPC()
+            initConciertoPC2()
 
             
         }
@@ -126,6 +259,16 @@ export default function Detalle() {
     const initConciertoPC = () => {
         let conciertoDrag = document.getElementById('conciertoDrag')
         let conciertoMoveDrag = document.getElementById('conciertoMoveDrag')
+        let navDrag = Draggable.create(conciertoMoveDrag, {
+            edgeResistance:0.5,
+            bounds: conciertoDrag,
+            type: "x", 
+            inertia: true
+        })
+    }
+    const initConciertoPC2 = () => {
+        let conciertoDrag = document.getElementById('conciertoDrag2')
+        let conciertoMoveDrag = document.getElementById('conciertoMoveDrag2')
         let navDrag = Draggable.create(conciertoMoveDrag, {
             edgeResistance:0.5,
             bounds: conciertoDrag,
@@ -567,10 +710,14 @@ export default function Detalle() {
         let tabAll = document.querySelectorAll(`.tabAccordion`)
         let tabSlider = document.querySelector(`.tabSlider${index}`)
         let tabSliderAll = document.querySelectorAll(`.tabSlider`)
+        let tabDrag = document.querySelector(`.tabDrag${index}`)
+        let tabDragAll = document.querySelectorAll(`.tabDrag`)
+        
         // const nuevosConciertos3 = itinerarios[index].conciertos
         // setListConcierto3(nuevosConciertos3)
         // console.log(`.tabAccordion${id}`)
         // console.log(tabActive.classList.contains("active"))
+        
         if (tabActive.classList.contains("active")){
             // console.log(22)
         }else{
@@ -592,6 +739,16 @@ export default function Detalle() {
             setTimeout(()=>{
                 tabSlider.style.opacity = 1
                 tabSlider.style.zIndex = 100
+            },100)
+
+            tabDragAll.forEach(function(tab) {
+                // tab.classList.remove("active")
+                tab.style.opacity = 0
+                tab.style.zIndex = 10
+            })
+            setTimeout(()=>{
+                tabDrag.style.opacity = 1
+                tabDrag.style.zIndex = 100
             },100)
 
         }
@@ -790,16 +947,32 @@ export default function Detalle() {
 
 
                             
-
-                            <div className={styles.conciertoDrag} id="conciertoDrag">
-                                <div className={styles.conciertoMoveDrag} id="conciertoMoveDrag">
-                                    <div className={styles.lineConcierto}>
-                                        {listConcierto3?.map((items,index) => (
-                                            <SectionConcierto2 
-                                                key={index}
-                                                items={items} 
-                                            />
-                                        ))}
+                            <div className='tabDrag tabDrag1'>
+                                <div className={`${styles.conciertoDrag}`} id="conciertoDrag">
+                                    <div className={styles.conciertoMoveDrag} id="conciertoMoveDrag">
+                                        <div className={styles.lineConcierto}>
+                                            {listConcierto3?.map((items,index) => (
+                                                <SectionConcierto2 
+                                                    key={index}
+                                                    items={items} 
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div className='tabDrag tabDrag0'>
+                                <div className={`${styles.conciertoDrag}`} id="conciertoDrag2">
+                                    <div className={styles.conciertoMoveDrag} id="conciertoMoveDrag2">
+                                        <div className={styles.lineConcierto}>
+                                            {listConcierto4?.map((items,index) => (
+                                                <SectionConcierto2 
+                                                    key={index}
+                                                    items={items} 
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
