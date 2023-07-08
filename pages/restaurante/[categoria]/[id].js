@@ -20,38 +20,6 @@ export default function Restaurante() {
 
     const [restaurantes, setRestaurantes] = useState([
         {
-            "id": 24,
-            "descripcion": "-",
-            "categoria_id": 1,
-            "categoria": "Carnes",
-            "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/24-desk-1688687860.svg",
-            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/24-mb-1688687860.svg",
-            "platos": [
-              {
-                "id": 36,
-                "restaurante_id": 24,
-                "restaurante": "Baco y Vaca",
-                "titulo": "Plato 2",
-                "descripcion": "Brocheta de cuadril argentino con papas tumbay",
-                "precio": "S/25.00",
-                "marinaje": "DOBLE MALTA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/plato/36/36-desk-1688693833.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/plato/36/36-mb-1688693833.png"
-              },
-              {
-                "id": 35,
-                "restaurante_id": 24,
-                "restaurante": "Baco y Vaca",
-                "titulo": "Plato 1",
-                "descripcion": "Anticucho de corazón de res argentino con papas tumbay",
-                "precio": "S/15.00",
-                "marinaje": "NEGRA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/plato/35/35-desk-1688693726.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/plato/35/35-mb-1688693726.png"
-              }
-            ]
-        },
-        {
             "id": 26,
             "descripcion": "-",
             "categoria_id": 1,
@@ -71,8 +39,8 @@ export default function Restaurante() {
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/26/plato/38/38-mb-1688694101.png"
               }
             ]
-        },
-        {
+          },
+          {
             "id": 2,
             "descripcion": "-",
             "categoria_id": 1,
@@ -101,6 +69,38 @@ export default function Restaurante() {
                 "marinaje": "DOBLE MALTA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/2/plato/5/5-desk-1688620269.png",
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/2/plato/5/5-mb-1688620269.png"
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "descripcion": "-",
+            "categoria_id": 1,
+            "categoria": "Carnes",
+            "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/24-desk-1688775588.svg",
+            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/24-mb-1688775588.svg",
+            "platos": [
+              {
+                "id": 36,
+                "restaurante_id": 24,
+                "restaurante": "Baco y Vaca",
+                "titulo": "Plato 2",
+                "descripcion": "Brocheta de cuadril argentino con papas tumbay",
+                "precio": "S/25.00",
+                "marinaje": "DOBLE MALTA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/plato/36/36-desk-1688693833.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/plato/36/36-mb-1688693833.png"
+              },
+              {
+                "id": 35,
+                "restaurante_id": 24,
+                "restaurante": "Baco y Vaca",
+                "titulo": "Plato 1",
+                "descripcion": "Anticucho de corazón de res argentino con papas tumbay",
+                "precio": "S/15.00",
+                "marinaje": "NEGRA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/plato/35/35-desk-1688693726.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/plato/35/35-mb-1688693726.png"
               }
             ]
         },
@@ -245,7 +245,7 @@ export default function Restaurante() {
                 "restaurante_id": 30,
                 "restaurante": "Master Kong",
                 "titulo": "Combo 1",
-                "descripcion": "combo 1",
+                "descripcion": "Combo 1: 01 cha siu pao, 01 kay pao, 3 siu mai",
                 "precio": "S/25.00",
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/30/plato/45/45-desk-1688694590.png",
@@ -256,7 +256,7 @@ export default function Restaurante() {
                 "restaurante_id": 30,
                 "restaurante": "Master Kong",
                 "titulo": "Combo 2",
-                "descripcion": "combo 2",
+                "descripcion": "Combo 2: 02 siu kao frito, 02 roll primavera, 03 siu mai",
                 "precio": "S/20.00",
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/30/plato/46/46-desk-1688694636.png",
@@ -305,17 +305,6 @@ export default function Restaurante() {
             "imagemobile": "https://back.mds-cusquena.com/images/restaurante/6/6-mb-1688618975.svg",
             "platos": [
               {
-                "id": 8,
-                "restaurante_id": 6,
-                "restaurante": "Amoramar",
-                "titulo": "Tapa Pato",
-                "descripcion": "Tapa Pato: 2 Spring roll relleno con arroz con pato de la casa, mayonesa de pimiento ahumado y de culantro",
-                "precio": "S/25.00",
-                "marinaje": "NEGRA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/6/plato/8/8-desk-1688688338.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/6/plato/8/8-mb-1688688338.png"
-              },
-              {
                 "id": 3,
                 "restaurante_id": 6,
                 "restaurante": "Amoramar",
@@ -325,6 +314,17 @@ export default function Restaurante() {
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/6/plato/3/3-desk-1688619061.png",
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/6/plato/3/3-mb-1688619061.png"
+              },
+              {
+                "id": 8,
+                "restaurante_id": 6,
+                "restaurante": "Amoramar",
+                "titulo": "Tapa Pato",
+                "descripcion": "Tapa Pato: 2 Spring roll relleno con arroz con pato de la casa, mayonesa de pimiento ahumado y de culantro",
+                "precio": "S/25.00",
+                "marinaje": "NEGRA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/6/plato/8/8-desk-1688688338.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/6/plato/8/8-mb-1688688338.png"
               }
             ]
           },
@@ -384,7 +384,7 @@ export default function Restaurante() {
                 "restaurante_id": 21,
                 "restaurante": "Burger Boy",
                 "titulo": "Cheeseburger",
-                "descripcion": "Cheeseburger: Carne de 120gr , cheddar y salsa G",
+                "descripcion": "Cheeseburger : Carne de 120gr , cheddar y salsa G",
                 "precio": "S/20.00",
                 "marinaje": "DORADA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/21/plato/30/30-desk-1688693320.png",
@@ -401,26 +401,26 @@ export default function Restaurante() {
             "imagemobile": "https://back.mds-cusquena.com/images/restaurante/22/22-mb-1688687780.svg",
             "platos": [
               {
-                "id": 31,
-                "restaurante_id": 22,
-                "restaurante": "Bendita Burger",
-                "titulo": "Bendita Burger",
-                "descripcion": "Burger de asado de tira (150gr), cebolla caramelizada sin azucar, cheddar, salsa bendita, pan artesanal",
-                "precio": "S/20.00",
-                "marinaje": "DOBLE MALTA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/22/plato/31/31-desk-1688693382.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/22/plato/31/31-mb-1688693382.png"
-              },
-              {
                 "id": 32,
                 "restaurante_id": 22,
                 "restaurante": "Bendita Burger",
                 "titulo": "Chanchiburger",
-                "descripcion": "Burger de asado de tira (150gr), cheddar, BBQ pulled pork, pickles, salsa bendita",
+                "descripcion": "Chanchiburger: Burger de asado de tira (150gr), cheddar, BBQ pulled pork, pickles, salsa bendita",
                 "precio": "S/25.00",
                 "marinaje": "NEGRA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/22/plato/32/32-desk-1688693416.png",
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/22/plato/32/32-mb-1688693416.png"
+              },
+              {
+                "id": 31,
+                "restaurante_id": 22,
+                "restaurante": "Bendita Burger",
+                "titulo": "Bendita Burger",
+                "descripcion": "Bendita Burger: Burger de asado de tira (150gr), cebolla caramelizada sin azucar, cheddar, salsa bendita, pan artesanal",
+                "precio": "S/20.00",
+                "marinaje": "DOBLE MALTA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/22/plato/31/31-desk-1688693382.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/22/plato/31/31-mb-1688693382.png"
               }
             ]
         },
@@ -437,7 +437,7 @@ export default function Restaurante() {
                 "restaurante_id": 15,
                 "restaurante": "Bao",
                 "titulo": "CANGRE BURGER BAO",
-                "descripcion": "Hamburguesa de asado de tira y kombu, queso cheddar, rabanito encurtido, cebolla china, cebolla encurtida, ajonjolí, lechuga y Mayosriracha (2 baos).",
+                "descripcion": "CANGRE BURGER BAO: Hamburguesa de asado de tira y kombu, queso cheddar, rabanito encurtido, cebolla china, cebolla encurtida, ajonjolí, lechuga y Mayosriracha (2 baos).",
                 "precio": "S/20.00",
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/15/plato/18/18-desk-1688621747.png",
@@ -458,7 +458,7 @@ export default function Restaurante() {
                 "restaurante_id": 16,
                 "restaurante": "Maketto",
                 "titulo": "CEBICHE MARCIANO",
-                "descripcion": "Cortes de pescado, leche de tigre marciana de culantro, patacones y chalaca con charapita.",
+                "descripcion": "CEBICHE MARCIANO: Cortes de pescado, leche de tigre marciana de culantro, patacones y chalaca con charapita.",
                 "precio": "S/20.00",
                 "marinaje": "DORADA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/16/plato/20/20-desk-1688690446.png",
@@ -511,7 +511,7 @@ export default function Restaurante() {
                 "restaurante_id": 19,
                 "restaurante": "Coqui del Castillo",
                 "titulo": "Plato 1: Maki Parmesano",
-                "descripcion": "10 CORTES",
+                "descripcion": "Maki Parmesano: 10 CORTES",
                 "precio": "S/25.00",
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/19/plato/25/25-desk-1688692931.png",
@@ -522,7 +522,7 @@ export default function Restaurante() {
                 "restaurante_id": 19,
                 "restaurante": "Coqui del Castillo",
                 "titulo": "Plato 2: Maki Acevichado",
-                "descripcion": "10 CORTES",
+                "descripcion": "Maki Acevichado: 10 CORTES",
                 "precio": "S/25.00",
                 "marinaje": "DORADA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/19/plato/26/26-desk-1688692967.png",
@@ -543,7 +543,7 @@ export default function Restaurante() {
                 "restaurante_id": 27,
                 "restaurante": "Razzeto Tratoria",
                 "titulo": "Plato 1",
-                "descripcion": "Focaccia Capreso",
+                "descripcion": "Focaccia Capresse",
                 "precio": "S/15.00",
                 "marinaje": "DOBLE MALTA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/27/plato/39/39-desk-1688694184.png",
@@ -603,30 +603,30 @@ export default function Restaurante() {
             "imagemobile": "https://back.mds-cusquena.com/images/restaurante/1/1-mb-1688422141.svg",
             "platos": [
               {
-                "id": 23,
-                "restaurante_id": 1,
-                "restaurante": "Primos",
-                "titulo": "Sanguche de pollo a la brasa",
-                "descripcion": "",
-                "precio": "S/20.00",
-                "marinaje": "DORADA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/1/plato/23/23-desk-1688690015.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/1/plato/23/23-mb-1688690015.png"
-              },
-              {
                 "id": 1,
                 "restaurante_id": 1,
                 "restaurante": "Primos",
                 "titulo": "1/4 de pollo a la brasa",
-                "descripcion": "",
+                "descripcion": "1/4 de pollo a la brasa",
                 "precio": "S/25.00",
                 "marinaje": "DOBLE MALTA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/1/plato/1/1-desk-1688422249.png",
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/1/plato/1/1-mb-1688422249.png"
+              },
+              {
+                "id": 23,
+                "restaurante_id": 1,
+                "restaurante": "Primos",
+                "titulo": "Sanguche de pollo a la brasa",
+                "descripcion": "Sanguche de pollo a la brasa",
+                "precio": "S/20.00",
+                "marinaje": "DORADA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/1/plato/23/23-desk-1688690015.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/1/plato/23/23-mb-1688690015.png"
               }
             ]
-        },
-        {
+          },
+          {
             "id": 25,
             "descripcion": "-",
             "categoria_id": 11,
@@ -639,7 +639,7 @@ export default function Restaurante() {
                 "restaurante_id": 25,
                 "restaurante": "Rasson",
                 "titulo": "Plato 1",
-                "descripcion": "Anticuchos de corazon de res con papitas doradas y aji de la casa.",
+                "descripcion": "Anticuchos de corazón de res con papitas doradas y aji de la casa.",
                 "precio": "S/25.00",
                 "marinaje": "NEGRA",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/25/plato/37/37-desk-1688694015.png",
@@ -703,7 +703,7 @@ export default function Restaurante() {
                 "restaurante_id": 14,
                 "restaurante": "Tunupa",
                 "titulo": "Plato 2",
-                "descripcion": "Asado de tira en salsa de hierbas andinas y tuberculos",
+                "descripcion": "Asado de tira en salsa de hierbas andinas y tubérculos",
                 "precio": "S/25.00",
                 "marinaje": "TRIGO",
                 "image_pc": "https://back.mds-cusquena.com/images/restaurante/14/plato/17/17-desk-1688621693.png",
@@ -857,7 +857,16 @@ export default function Restaurante() {
                         data={ titleactivo } 
                     />
                     <div className={styles.restauranteContendorDetalle}>
-                        <div className='container'>
+                        
+                        <div className='container posrelative'>
+                            <div className='botonFlotante'>
+                                <div className='centrarBotonGeneral'>
+                                    <Link href='/restaurantes' className='botonGeneral flexBox'>
+                                        <img src='/assets/flecha.png' alt='Regresar'/>
+                                        <span>REGRESAR</span>
+                                    </Link>
+                                </div>
+                            </div>
                             <div className={styles.gridRestaurante}>
                                 {platoactivo?.map((items,index) => (
                                     <Plato 
@@ -872,9 +881,7 @@ export default function Restaurante() {
                                 </div> */}
                             </div>
                         </div>
-                        <div className='centrarBotonGeneral'>
-                            <Link href='/restaurantes' className='botonGeneral'>REGRESAR A LA LISTA <br/>DE RESTAURANTES</Link>
-                        </div>
+                        
                     </div>
                 </Layout> 
             </div>        

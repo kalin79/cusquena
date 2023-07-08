@@ -452,7 +452,17 @@ header
      &:focus
           border: 0px solid $dorado
           outline: none
-
+.posrelative
+     position: relative !important
+     border: 0px solid red
+.botonFlotante
+        position: absolute
+        top: -6rem
+        left: 1rem
+        z-index: 100
+        @media screen and (min-width: 992px)
+          top: -8rem
+          left: 0
 .centrarBotonGeneral
      display: flex
      justify-content: center
@@ -476,6 +486,23 @@ header
      padding-top: .5rem
      cursor: pointer
      text-decoration: none
+     &.flexBox
+          display: flex
+          justify-content: center
+          align-items: center
+          padding-top: .25rem
+          width: 153px
+          height: 48px
+     img
+          width: 12px
+          height: 19px
+          margin-right: .5rem
+     span
+          font-family: $norpethDemiBold
+          font-size: 14px
+          line-height: 1.15em
+          color: $doradoClaro
+          text-align: center
      &.big
           width: 148px
           height: 42px
