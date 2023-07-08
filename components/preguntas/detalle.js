@@ -75,7 +75,7 @@ export default function Detalle() {
                                             </div>
                                             <div className="panel-content">
                                                 <p>
-                                                Maestros de Sabor El Festival es una experiencia gastronómica única que reunirá en un solo lugar lo mejor de nuestra comida en un solo lugar. Además, podrás disfrutar de clases de cocina en vivo, música con artistas nacionales e internacionales y celebrarlo junto a Cusqueña.
+                                                Maestros de Sabor El Festival es una experiencia gastronómica única que reunirá en un solo lugar lo mejor de nuestra comida. Además, podrás disfrutar de clases de cocina en vivo, música con artistas nacionales e internacionales y celebrarlo junto a Cusqueña.
                                                 </p>
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@ export default function Detalle() {
                                             </div>
                                             <div className="panel-content">
                                                 <p>
-                                                LLa primera edición de Maestros del Sabor El Festival se llevará a cabo el 8 y 9 de julio del 2023 en el Parque de la Reserva. Durante esos dos días podrás disfrutar de los sabores que conquistan el mundo. 
+                                                La primera edición de Maestros del Sabor El Festival se llevará a cabo el 8 y 9 de julio del 2023 en el Parque de la Reserva. Durante esos dos días podrás disfrutar de los sabores que conquistan el mundo. 
                                                 </p>
                                             </div>
                                         </div>
