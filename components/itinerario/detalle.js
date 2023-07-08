@@ -61,15 +61,6 @@ export default function Detalle() {
     ])
     const [listItinerario2, setListItinerario2] = useState([
         {
-            "id": 5,
-            "titulo": "Cata y maridaje: Alejo Acuña",
-            "hora": "3:00 PM",
-            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            "horario": "3:00 PM – 4:00 PM",
-            "zona": "Cata y maridaje",
-            "capacidad": "40 personas"
-        },
-        {
             "id": 3,
             "titulo": "Masterclass: James Berckemeyer",
             "hora": "2:00 PM",
@@ -79,11 +70,11 @@ export default function Detalle() {
             "capacidad": "40 personas"
         },
         {
-            "id": 7,
+            "id": 5,
             "titulo": "Cata y maridaje: Alejo Acuña",
-            "hora": "5:00 PM",
+            "hora": "3:00 PM",
             "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
-            "horario": "5:00 PM – 6:00 PM",
+            "horario": "3:00 PM – 4:00 PM",
             "zona": "Cata y maridaje",
             "capacidad": "40 personas"
         },
@@ -94,6 +85,15 @@ export default function Detalle() {
             "descripcion": "El ganador de Maestros del Sabor 2021, llega para compartir una experiencia gastronómica que conquistará tu paladar. Acompaña a Javier Valdez a preparar unos escalopines de ternera, acompañada de un chutney de lúcuma y majadito de yuca al anís estrella. Siempre maridado con una Cusqueña bien heladita.",
             "horario": "4:00 PM – 5:00 PM",
             "zona": "Masterclass",
+            "capacidad": "40 personas"
+        },
+        {
+            "id": 7,
+            "titulo": "Cata y maridaje: Alejo Acuña",
+            "hora": "5:00 PM",
+            "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
+            "horario": "5:00 PM – 6:00 PM",
+            "zona": "Cata y maridaje",
             "capacidad": "40 personas"
         }
     ])
