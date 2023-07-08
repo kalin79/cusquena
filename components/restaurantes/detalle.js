@@ -52,7 +52,7 @@ export default function Detalle() {
         },
         {
         "id": 10,
-        "titulo": "Poke",
+        "titulo": "Pollerías",
         "icono": ""
         },
         {
@@ -67,7 +67,7 @@ export default function Detalle() {
         },
         {
         "id": 13,
-        "titulo": "Sanguches",
+        "titulo": "Regional",
         "icono": ""
         },
         {
@@ -167,7 +167,28 @@ export default function Detalle() {
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/plato/35/35-mb-1688693726.png"
               }
             ]
-        }
+        },
+        {
+            "id": 25,
+            "descripcion": "-",
+            "categoria_id": 11,
+            "categoria": "Pollerías",
+            "image_pc": "https://back.mds-cusquena.com/images/restaurante/25/25-desk-1688687894.svg",
+            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/25/25-mb-1688687894.svg",
+            "platos": [
+              {
+                "id": 37,
+                "restaurante_id": 25,
+                "restaurante": "Rasson",
+                "titulo": "Plato 1",
+                "descripcion": "Anticuchos de corazón de res con papitas doradas y aji de la casa.",
+                "precio": "S/25.00",
+                "marinaje": "NEGRA",
+                "image_pc": "https://back.mds-cusquena.com/images/restaurante/25/plato/37/37-desk-1688694015.png",
+                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/25/plato/37/37-mb-1688694015.png"
+              }
+            ]
+          }
     ])
 
     const [restaurante2, setRestaurante2] = useState([
@@ -720,27 +741,6 @@ export default function Detalle() {
                 "imagemobile": "https://back.mds-cusquena.com/images/restaurante/1/plato/23/23-mb-1688690015.png"
               }
             ]
-          },
-          {
-            "id": 25,
-            "descripcion": "-",
-            "categoria_id": 11,
-            "categoria": "Pollerías",
-            "image_pc": "https://back.mds-cusquena.com/images/restaurante/25/25-desk-1688687894.svg",
-            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/25/25-mb-1688687894.svg",
-            "platos": [
-              {
-                "id": 37,
-                "restaurante_id": 25,
-                "restaurante": "Rasson",
-                "titulo": "Plato 1",
-                "descripcion": "Anticuchos de corazón de res con papitas doradas y aji de la casa.",
-                "precio": "S/25.00",
-                "marinaje": "NEGRA",
-                "image_pc": "https://back.mds-cusquena.com/images/restaurante/25/plato/37/37-desk-1688694015.png",
-                "imagemobile": "https://back.mds-cusquena.com/images/restaurante/25/plato/37/37-mb-1688694015.png"
-              }
-            ]
           }
     ])
 
@@ -868,7 +868,7 @@ export default function Detalle() {
     },[]) 
 
     const updateNavSet = () => {
-        const arrIcon = ['iconcarne','iconcriollo','iconchifa','iconcomtemporaneo','iconmarino','iconhamburguesa','iconnikkei','iconpasta','iconpizza','iconpoke','iconpolleria','iconregional','iconsanguches']
+        const arrIcon = ['iconcarne','iconcriollo','iconchifa','iconcomtemporaneo','iconmarino','iconhamburguesa','iconnikkei','iconpasta','iconpizza','iconpolleria','iconregional']
 
         const btnNav = document.getElementById('btnNav1')
         const _div = btnNav.querySelector('div')
@@ -882,12 +882,13 @@ export default function Detalle() {
         })
     }
     const resetIconNav = () => {
-        const arrIcon = ['iconcarne','iconcriollo','iconchifa','iconcomtemporaneo','iconmarino','iconhamburguesa','iconnikkei','iconpasta','iconpizza','iconpoke','iconpolleria','iconregional','iconsanguches']
+        const arrIcon = ['iconcarne','iconcriollo','iconchifa','iconcomtemporaneo','iconmarino','iconhamburguesa','iconnikkei','iconpasta','iconpizza','iconpolleria','iconregional']
         const arrNavButton = document.querySelectorAll('.navRestaurantes button')
         
         arrNavButton.forEach( (element, index) => {
             const _div = element.querySelector('div')
-            if ((index !=9) && (!index != 12)){
+            // console.log(index)
+            // if ((index !=9) && (!index != 12)){
                 // console.log(index)
                 document.getElementById(`nav${index+1}`).src=`/assets/${arrIcon[index]}.svg`
                 element.classList.remove('active')
@@ -896,7 +897,7 @@ export default function Detalle() {
                         background: 'transparent'
                     }
                 })
-            } 
+            // } 
             
             // console.log(arrIcon[index])
         })
@@ -906,18 +907,25 @@ export default function Detalle() {
         const img = document.getElementById(`nav${id}`)
         const _div = btnNav.querySelector('div')
         img.src=`/assets/${imagen}Active.svg`  
+        console.log(id)
         btnNav.classList.add('active')
         gsap.to(_div,{
             css: {
                 background: '#D2AF75'
             }
         })
+        console.log('kalin')
         clicNav.current = false
     }
 
     const handleRestaurante = (e,id,imagen) => {
+        console.log(id)
+        console.log(clicNav.current )
+        let a = document.querySelector('.navRestaurantes button')
+        a.classList.remove('active')
         if (clicNav.current === false){
             clicNav.current = true
+            console.log(id)
             const btnNav = document.getElementById(`btnNav${id}`)
             console.log(btnNav.classList.contains("active"))
             if (btnNav.classList.contains("active")){
@@ -925,6 +933,7 @@ export default function Detalle() {
             }else{
 
                 let idCategoria = id
+    
                 let nuevoTitulo = categorias.map((categoria) => {
                     if (categoria.id === idCategoria)
                         return categoria.titulo
@@ -960,10 +969,10 @@ export default function Detalle() {
                     setRestactivo(restaurante9)
                 }
                 if (id === 10){
-                    setRestactivo(restaurante10)
+                    setRestactivo(restaurante11)
                 }
                 if (id === 11){
-                    setRestactivo(restaurante11)
+                    setRestactivo(restaurante12)
                 }
                 if (id === 12){
                     setRestactivo(restaurante12)
@@ -1075,15 +1084,15 @@ export default function Detalle() {
                                     </div>
                                     <p>Poke</p>
                                 </button> */}
-                                <button onClick={ (e) => handleRestaurante(e,11,'iconpolleria')} id="btnNav11">
+                                <button onClick={ (e) => handleRestaurante(e,10,'iconpolleria')} id="btnNav10">
                                     <div className={styles.boxCircle}>
-                                        <Image src="/assets/iconpolleria.svg" id="nav11" width={47} height={35} alt='Pollerias'  />
+                                        <Image src="/assets/iconpolleria.svg" id="nav10" width={47} height={35} alt='Pollerias'  />
                                     </div>
                                     <p>Pollerias</p>
                                 </button>
-                                <button onClick={ (e) => handleRestaurante(e,12,'iconregional')} id="btnNav12">
+                                <button onClick={ (e) => handleRestaurante(e,11,'iconregional')} id="btnNav11">
                                     <div className={styles.boxCircle}>
-                                        <Image src="/assets/iconregional.svg" id="nav12" width={47} height={35} alt='Regional'  />
+                                        <Image src="/assets/iconregional.svg" id="nav11" width={47} height={35} alt='Regional'  />
                                     </div>
                                     <p>Regional</p>
                                 </button>
@@ -1104,7 +1113,7 @@ export default function Detalle() {
                     <div className={`iconRombo small claro ${styles.pos4}`}></div>
 
                     <div className={styles.boxTitle}>
-                        {titleactivo}
+                        {/* {titleactivo} */}
                         <TitluloCategoria 
                             titleactivo={titleactivo}
                         />
