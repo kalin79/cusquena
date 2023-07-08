@@ -10,7 +10,7 @@ export default function Panel({items}) {
         <>
             <div className="panel closed">
                 <div className="panel-header">
-                    <h3>{hora} {items.titulo}</h3>
+                    <h3>{hora} {items.titulo}1</h3>
                     <div className='header-arrow'>
                         <Image src="/assets/arrow2.svg" width="16" height="8" alt='1 PM - CATA MARIDAJE CEVICHE'/>
                     </div>

@@ -5,6 +5,9 @@ import styles from  '../../styles/sass/itinerario.module.sass'
 export default function Concierto2({items}) {
     // console.log(items)
     const {horario, image_pc, imagemobile, id, titulo } = items
+    const createMarkup =  () => {
+        return {__html: horario}
+    }
     return (
         <>
             <section>
@@ -16,7 +19,7 @@ export default function Concierto2({items}) {
                         <img src={imagemobile} width = '1400' height = '1415' alt={titulo} />
                         <div className={styles.conciertoContent}>
                             {/* <h3>{titulo}</h3> */}
-                            <p>{horario}</p>
+                            <p dangerouslySetInnerHTML={ createMarkup() }></p>
                         </div>
                     </div>
                 </div>

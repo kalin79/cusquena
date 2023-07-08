@@ -7,7 +7,7 @@ export default function Plato({data}){
         return {__html: `MARIDA BIEN CON CUSQUEÑA<br> ${data.marinaje} `}
     }
     const createMarkupTitulo =  () => {
-        return {__html: data.descripcion}
+        return {__html: `${data.descripcion}`}
     }
     return(
         <>

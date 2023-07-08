@@ -88,8 +88,8 @@ export default function Detalle() {
             "descripcion": "-",
             "categoria_id": 1,
             "categoria": "Carnes",
-            "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/24-desk-1688687860.svg",
-            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/24-mb-1688687860.svg",
+            "image_pc": "https://back.mds-cusquena.com/images/restaurante/24/24-desk-1688775588.svg",
+            "imagemobile": "https://back.mds-cusquena.com/images/restaurante/24/24-mb-1688775588.svg",
             "platos": [
               {
                 "id": 36,
