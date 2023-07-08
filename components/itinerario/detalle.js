@@ -28,7 +28,7 @@ export default function Detalle() {
             "hora": "2:00 PM",
             "descripcion": "Vive una experiencia única donde conocerás las características de nuestras variedades y como maridar correctamente cada una de ellas con nuestra gastronomía peruana.",
             "horario": "2:00 PM – 3:00 PM",
-            "zona": "Cata y maridaje:",
+            "zona": "Cata y maridaje",
             "capacidad": "40 personas"
         },
         {

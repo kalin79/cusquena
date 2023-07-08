@@ -4,7 +4,7 @@ export default function Panel({items}) {
     // console.log(items)
     const {capacidad, descripcion, hora, horario, id, titulo, zona } = items
     const createMarkup =  () => {
-        return {__html: `Horarios: ${horario}`}
+        return {__html: `Horario: ${horario}`}
     }
     return (
         <>
