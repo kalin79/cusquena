@@ -16,7 +16,7 @@ export default function BtnMenu2({data,url}){
         <>
             <div className={styles.cardRestaurante}>
                 <div className={`boxContenidoRombo ${styles.boxContenidoRombo}`} onClick={ () => handleClic(url)}>
-                    <div className='romboPrincipal flotante'>
+                    <div className='romboPrincipal2 flotante'>
                     {/* <h3>CATEGORÍA<br />carnes</h3> */}
                         <div className='boxInfo '>
                             <div className={`boxLogoRest ${styles.boxLogoRest}`}>

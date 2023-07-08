@@ -5,7 +5,7 @@ import Link from 'next/link'
 import styles from  '../../styles/sass/banner.module.sass'
 
 const Bannerrestaurante = ({data}) => {
-    // console.log(data)
+    console.log(data)
     return (
         <>
             <div className={styles.boxBanner}>
@@ -26,9 +26,9 @@ const Bannerrestaurante = ({data}) => {
                 <div className={`boxContenidoRombo ${styles.posRombo} romboBannerCabecera`}>
                     <div className={`iconRombo claro small ${styles.pos1}`}></div>
                     <div className={`iconRombo claro ${styles.pos2}`}></div>
-                    <div className='romboPrincipal'>
+                    <div className='romboPrincipal2'>
                         <div className='boxInfo'>
-                            <div className={styles.cabeceraLogoRestaurante}>
+                            <div className={styles.cabeceraLogoRestaurante2}>
                                 <img src={data} width='100' height='100' alt="Restaurante"  />
                             </div>
                         </div>
