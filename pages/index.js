@@ -106,6 +106,18 @@ export default function Home({userActive,ValidarUser}) {
                 <title>Cusqueña :: Maestros del Sabor</title>
                 <meta name="title" content='Cusqueña :: Maestros del Sabor' />
                 <meta name="description" content='Cusqueña :: Maestros del Sabor' />
+                <meta property="og:image" content="https://mds-cusquena.com/assets/post.png" />
+                <meta property="og:image:type" content="png" />
+                <meta property="og:title" content="Cusqueña :: Maestros del Sabor" />
+                <meta property="og:description" content="Cusqueña :: Maestros del Sabor" />
+                <meta property="og:site_name" content="https://mds-cusquena.com/, Lima Peru" />
+                
+                <meta name="twitter:image" content="https://mds-cusquena.com/assets/post.png" />
+                <meta name="twitter:title" content="Cusqueña :: Maestros del Sabor" />
+                <meta name="twitter:description" content="Cusqueña :: Maestros del Sabor" />
+                <meta name="twitter:site" content="@publisher_handle" />
+
+                <meta name="robots" content="index,follow"/>
             </Head>
             <div className={styles.intro}>
                 <Banner />
