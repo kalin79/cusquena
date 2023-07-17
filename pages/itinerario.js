@@ -5,8 +5,8 @@ import Layout from '../components/layout'
 import BannerPrincial from '../components/itinerario/banner'
 import Detalle from '../components/itinerario/detalle'
 
-export default function Itinerario(){
-
+export default function Itinerario({itinerarios}){
+    console.log(itinerarios)
     return (
         <div>
             <div className='overflowHidden'>
